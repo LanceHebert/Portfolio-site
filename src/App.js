@@ -1,12 +1,22 @@
-import logo from "./logo.svg";
-import "./App.css";
 
-function App() {
+import ResponsiveAppBar from "./components/ResponsiveAppBar";
+import React from "react";
+import ImageOne from "./components/ImageOne";
+import ImageThree from "./components/ImageThree";
+import TextBox from "./components/TextBox";
+import ImageTwo from "./components/ImageTwo"
+
+function App() { 
+
   return (
     <>
-    
-      <h1> Software Engineer</h1>
-      <h2>Lance Hebert </h2>
+   
+      <ResponsiveAppBar /> 
+      <ImageOne />
+      <TextBox />
+      <ImageThree />
+      <TextBox />
+      <ImageTwo />
     </>
   );
 }
