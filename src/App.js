@@ -15,7 +15,7 @@ function App() {
       <ImageOne />
       <TextBox />
       <ImageThree />
-      <TextBox />
+      {/* <TextBox /> */}
       <ImageTwo />
     </>
   );

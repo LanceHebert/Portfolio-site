@@ -31,7 +31,10 @@ p {
 .MuiBox-root.css-1t6c9ts {
   justify-content: center;
 }
-
+.text-box{
+  background-color:#00EAD3;
+  color:black
+}
 .image {
   position: fixed;
   height: 100vh;
@@ -44,7 +47,20 @@ p {
   height: 100vh;
   width: 100%;
 }
-
+.container {
+  display: flex; /* or inline-flex */
+  flex-wrap: wrap;
+  
+  background-image: linear-gradient(to right, #0fa , #FF449F);
+}
+.AboutBox{
+  width: 50%;
+  text-align: center;
+}
+.SocialsBox{
+  width:50%;
+  text-align: center;
+}
 @media only screen and (max-width: 600px) {
   .content span.img-txt {
     /* position: absolute; */
@@ -127,6 +143,7 @@ p {
   font-size: 6rem;
   text-align: center;
   font-family: Neonderthaw;
+  
 }
 .neonTextG {
   animation: flickerG 3s infinite alternate;
@@ -144,6 +161,7 @@ p {
   100% {
     text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #0fa,
       0 0 80px #0fa, 0 0 90px #0fa, 0 0 100px #0fa, 0 0 150px #0fa;
+      
   }
 
   20%,
@@ -157,6 +175,7 @@ p {
   color: #fff;
   text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #ffdf6b,
     0 0 80px #ffdf6b, 0 0 90px #ffdf6b, 0 0 100px #ffdf6b, 0 0 150px #ffdf6b;
+    
 }
 
 /* Flickering animation */
@@ -178,3 +197,45 @@ p {
     text-shadow: none;
   }
 }
+.arrow{
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  
+}
+.arrow span{
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-bottom: 5px solid #ffdf6b;
+  border-right: 5px solid #ffdf6b;
+  
+  transform: rotate(45deg);
+  margin: -10px;
+  animation: animate 2s infinite;
+}
+.arrow span:nth-child(2){
+  animation-delay: -0.2s;
+  
+}
+.arrow span:nth-child(3){
+  animation-delay: -0.4s;
+  
+}
+@keyframes animate {
+  0%{
+      opacity: 0;
+      transform: rotate(45deg) translate(-20px,-20px);
+      
+  }
+  50%{
+      opacity: 1;
+  }
+  100%{
+      opacity: 0;
+      transform: rotate(45deg) translate(20px,20px);
+  }
+}
+
+
