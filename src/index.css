@@ -92,7 +92,7 @@ height: 22.5vh;
 .AboutImg{
   position:relative; 
   /* min-height: 50%; */
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
 min-width: 400px;
 
@@ -115,8 +115,9 @@ min-width: 400px;
 }
 .AboutBox{
   /* width: 50%; */
-  text-align: center;
-  padding: 3% ;
+  /* text-align: center; */
+  padding: 10% 3% 0% 3% ;
+  
 }
 .SocialsBox{
   /* width:50%; */
