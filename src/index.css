@@ -422,11 +422,275 @@ hr {
 .icon{
   font-size:5vh;
   justify-content: center;
-  padding:2% 2% 2% 2%;
+  /* padding:2% 2% 2% 2%; */
   color: #ffdf6b;
   text-shadow: 2px 2px #005f99;
 }
 .pfpRow{
   min-height: 25vh;
+
+}
+/* Technical Skills  */
+/* ****************************************************** */
+
+:root {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --varyDarkBlue: hsl(234, 12%, 34%);
+  --grayishBlue: hsl(229, 6%, 66%);
+  --veryLightGray: hsl(0, 0%, 98%);
+  --weight1: 200;
+  --weight2: 400;
+  --weight3: 600;
+}
+
+.attribution { 
+  font-size: 11px; text-align: center; 
+}
+.attribution a { 
+  color: hsl(228, 45%, 44%); 
+}
+
+
+@media (max-width: 450px) {
+  .cardTitle.cardTitle {
+      font-size: 1rem;
+    margin:0;
+  }
+  .box.box {
+    height: 25vw;
+    padding-top:10px;
+}
+.cardText.cardText{
+  font-size:3vw;
+}
+.skillIcon.skillIcon{
+  float: right;
+  width: 30px;
+}
+}
+
+.box p {
+  color: rgba(255, 255, 0, 0.495);
+  
+}
+
+.box {
+  border-radius: 5px;
+  box-shadow: 0px 30px 40px -20px var(--grayishBlue);
+  padding: 30px;
+  margin: 20px;  
+}
+
+.skillIcon{
+  float: right;
+  width: 50px;
+}
+
+/* @media (max-width: 450px) {
+  .box {
+      height: 18vh;
+  }
+} */
+
+@media (max-width: 950px) and (min-width: 450px) {
+  .box {
+      text-align: center;
+      height: 140px;
+      width:90%
+  }
+  .cardText.cardText{
+    font-size:.6rem;
+  }
+  .skillIcon.skillIcon{
+    float: right;
+    width: 35px;
+  }
+}
+
+.cyan {
+  border-top: 3px solid var(--cyan);
+}
+.red {
+  border-top: 3px solid var(--red);
+}
+.blue {
+  border-top: 3px solid var(--blue);
+}
+.orange {
+  border-top: 3px solid var(--orange);
+}
+
+
+
+
+@media (min-width: 950px) {
+  .row1-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .row2-container {
+      display: flex;
+      
+      justify-content: center;
+      align-items: center;
+  }
+  .box-down {
+      position: relative;
+      top: 150px;
+  }
+  .box {
+      width: 20%;
+   
+  }
+  
+  
+}
+.cardText{
+  font-size:1vw;
+}
+.cardTitle{
+  color:#fde89f;
+}
+
+
+
+/* Projects  */
+/* ****************************************************** */
+
+.projectContainer {
+    width: 100vw;
+    position: relative;
+    display: flex;   
+    align-items: center;
+    justify-content: center;    
+}
+
+.projectContainer .card {
+  position: relative;
+  border-radius: 10px;
+}
+
+.projectContainer .card .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: 0.7s;
+  z-index: 1;
+}
+
+.projectContainer .card:nth-child(1) .icon {
+  background: #e07768;
+}
+
+.projectContainer .card:nth-child(2) .icon {
+  background: #6eadd4;
+}
+
+.projectContainer .card:nth-child(3) .icon {
+  background: #4aada9;
+}
+
+
+.projectContainer .card .icon .fa {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  transition: 0.7s;
+  color: #fff;
+}
+
+i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  transition: 0.7s;
+  color: #fff;
+}
+
+.projectContainer .card .face {
+  width: 300px;
+  height: 200px;
+  transition: 0.5s;
+}
+
+.projectContainer .card .face.face1 {
+  position: relative;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transform: translateY(100px);
+}
+
+.projectContainer .card:hover .face.face1{
+  background: #ff0057;
+  transform: translateY(0px);
+}
+
+.projectContainer .card .face.face1 .projectContent {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.projectContainer .card:hover .face.face1 .projectContent {
+  opacity: 1;
+}
+
+.projectContainer .card .face.face1 .projectContent i{
+  max-width: 100px;
+}
+
+.projectContainer .card .face.face2 {
+  position: relative;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+  transform: translateY(-100px);
+}
+
+.projectContainer .card:hover .face.face2{
+  transform: translateY(0);
+}
+
+.projectContainer .card .face.face2 .projectContent p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #414141;
+}
+
+.projectContainer .card .face.face2 .projectContent h3 {
+  margin: 0 0 10px 0;
+  padding: 0;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  color: #414141;
+} 
+
+.projectContainer a {
+  text-decoration: none;
+  color: #414141;
+}
+.projectImg{
+  width:100%;
+  height:100%;
 
 }
