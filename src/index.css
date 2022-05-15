@@ -547,7 +547,7 @@ hr {
       width: 20%;
    
   }
-  
+ 
   
 }
 .cardText{
@@ -561,11 +561,20 @@ hr {
 
 /* Projects  */
 /* ****************************************************** */
-
+@media (max-width: 1025px) and (min-width: 450px) { 
+  .projectContainer .card .face {
+    width: 100px;
+    height: 150px;
+    transition: 0.5s;
+  } 
+ 
+  
+}
 .projectContainer {
     width: 100vw;
     position: relative;
     display: flex;   
+    flex-wrap:wrap;
     align-items: center;
     justify-content: center;    
 }
@@ -573,6 +582,7 @@ hr {
 .projectContainer .card {
   position: relative;
   border-radius: 10px;
+  padding:2%;
 }
 
 .projectContainer .card .icon {
@@ -586,29 +596,9 @@ hr {
   z-index: 1;
 }
 
-.projectContainer .card:nth-child(1) .icon {
-  background: #e07768;
-}
-
-.projectContainer .card:nth-child(2) .icon {
-  background: #6eadd4;
-}
-
-.projectContainer .card:nth-child(3) .icon {
-  background: #4aada9;
-}
 
 
-.projectContainer .card .icon .fa {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 80px;
-  transition: 0.7s;
-  color: #fff;
-}
-
+/* 
 i {
   position: absolute;
   top: 50%;
@@ -617,7 +607,7 @@ i {
   font-size: 80px;
   transition: 0.7s;
   color: #fff;
-}
+} */
 
 .projectContainer .card .face {
   width: 300px;
