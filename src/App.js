@@ -9,7 +9,7 @@ import ImageTwo from "./components/ImageTwo"
 function App() { 
 
   return (
-    <>
+    <div>
    
       <ResponsiveAppBar /> 
       <ImageOne />
@@ -17,7 +17,7 @@ function App() {
       <ImageThree />
       {/* <TextBox /> */}
       <ImageTwo />
-    </>
+    </div>
   );
 }
 

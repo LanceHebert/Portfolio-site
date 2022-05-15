@@ -7,8 +7,8 @@ const ImageTwo = () => (
       style={{ textAlign: "center", paddingTop: "60px", paddingBottom: "60px" }}
     >
       <span className="img-txt AboutTitle">Projects</span>
-      <div class="projectContainer">
-        <div class="card">
+      <div class="projectContainer shrink ">
+        <div class="card ">
           <div class="face face1">
             <div class="projectContent">
               <div class="icon">
@@ -21,7 +21,7 @@ const ImageTwo = () => (
               <h3>
                 <span className="AboutTitle projectTitle"> Pain Point</span>
               </h3>
-              <br />
+              
 
               <a
                 href="https://github.com/LanceHebert/pain_point"
@@ -60,7 +60,7 @@ const ImageTwo = () => (
             <h3>
                 <span className="AboutTitle projectTitle"> Duelist</span>
               </h3>
-              <br />
+              
 
               <a
                 href="https://github.com/LanceHebert/phase-4-project-react-rails-api"
@@ -98,7 +98,7 @@ const ImageTwo = () => (
             <h3>
                 <span className="AboutTitle projectTitle"> Poddr</span>
               </h3>
-              <br />
+              
 
               <a
                 href="https://github.com/LanceHebert/Podcast-Recommender-Project-2"
