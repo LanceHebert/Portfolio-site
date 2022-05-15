@@ -55,13 +55,18 @@ const ImageThree = () => (
       <div className="box box-down blue">
         <h2 className="cardTitle">Database Management</h2>
         <p className="cardText">
-          PostgreSQL
+          PostgreSQL,SQLite
         </p>
         <img
           className="skillIcon"
-          src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg"
+          src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg"
           alt=""
         />
+         <img
+        className="skillIcon"
+        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg"
+        alt=""
+      />
       </div>
     </div>
     <div className="row2-container">

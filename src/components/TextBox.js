@@ -9,10 +9,10 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 function TextBox() {
-  const medium = <FontAwesomeIcon className="icon" icon={faMedium} />;
-  const linkedin = <FontAwesomeIcon className="icon"icon={faLinkedin} />;
-  const github = <FontAwesomeIcon className="icon"icon={faGithub} />;
-  const youtube = <FontAwesomeIcon className="icon"icon={faYoutube} />;
+  const medium = <FontAwesomeIcon className="AboutIcon" icon={faMedium} />;
+  const linkedin = <FontAwesomeIcon className="AboutIcon"icon={faLinkedin} />;
+  const github = <FontAwesomeIcon className="AboutIcon"icon={faGithub} />;
+  const youtube = <FontAwesomeIcon className="AboutIcon"icon={faYoutube} />;
 
   return (
     <div>
@@ -80,7 +80,7 @@ function TextBox() {
                     
                     
                   </div> */}
-                  <div className="row icon">
+                  <div className="row AboutIcon">
                   {linkedin}
                     {github}
                     {medium}

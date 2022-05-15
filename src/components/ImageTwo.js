@@ -3,41 +3,47 @@ import SynthHD from "../images/synthHD.jpeg";
 
 const ImageTwo = () => (
   <Parallax className="image" bgImage={SynthHD} strength={800}>
-    <div style={{ textAlign: "center",paddingTop:"60px",paddingBottom:"60px" }} >
-      <span className="img-txt AboutTitle"  >Projects</span>
+    <div
+      style={{ textAlign: "center", paddingTop: "60px", paddingBottom: "60px" }}
+    >
+      <span className="img-txt AboutTitle">Projects</span>
       <div class="projectContainer">
         <div class="card">
           <div class="face face1">
             <div class="projectContent">
               <div class="icon">
-                  
                 <img className="projectImg" src="../images/painPoint.png" />
-                {/* <i class="fa fa-linkedin-square" aria-hidden="true"></i> */}
               </div>
             </div>
           </div>
           <div class="face face2">
             <div class="projectContent">
               <h3>
-                 <span className="AboutTitle"> Pain Point</span>
-                  <br />
-                <a
-                  href="https://www.linkedin.com/in/adamdipinto/"
-                  target="_blank"
-                >
-                  Code
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/adamdipinto/"
-                  target="_blank"
-                >
-                  Demo
-                </a>
+                <span className="AboutTitle projectTitle"> Pain Point</span>
               </h3>
-              <p>
-              App allows user to pick a physical therapist exercise plan and records/displays user data. 
+              <br />
 
-              </p>
+              <a
+                href="https://github.com/LanceHebert/pain_point"
+                target="_blank"
+                className="projectLinkText"
+              >
+                Code
+              </a>
+
+              <a
+                className="projectLinkText"
+                href="https://www.loom.com/share/f97df21b1b2043d1a31ca52334706479"
+                target="_blank"
+              >
+                Demo
+              </a>
+              <div className="projectDescription">
+                <p>
+                  App allows user to pick a physical therapist exercise plan and
+                  records/displays user data.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -45,21 +51,37 @@ const ImageTwo = () => (
           <div class="face face1">
             <div class="projectContent">
               <div class="icon">
-                <i class="fa fa-twitter-square" aria-hidden="true"></i>
+              <img className="projectImg" src="../images/duelist.png" />
               </div>
             </div>
           </div>
           <div class="face face2">
             <div class="projectContent">
-              <h3>
-                <a href="https://twitter.com/AdamDipinto" target="_blank">
-                  @AdamDipinto
-                </a>
+            <h3>
+                <span className="AboutTitle projectTitle"> Duelist</span>
               </h3>
-              <p>
-                This is where I read news and network with different social
-                groups.
-              </p>
+              <br />
+
+              <a
+                href="https://github.com/LanceHebert/phase-4-project-react-rails-api"
+                target="_blank"
+                className="projectLinkText"
+              >
+                Code
+              </a>
+
+              <a
+                className="projectLinkText"
+                href="https://www.loom.com/share/c81c57ec61d54378a2e0977e3b1d8a62"
+                target="_blank"
+              >
+                Demo
+              </a>
+              <div className="projectDescription">
+                <p>
+                App allows User to create/save character with stats and randomized equipment
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -67,18 +89,37 @@ const ImageTwo = () => (
           <div class="face face1">
             <div class="projectContent">
               <div class="icon">
-                <i class="fa fa-github-square" aria-hidden="true"></i>
+              <img className="projectImg" src="../images/poddr.png" />
               </div>
             </div>
           </div>
           <div class="face face2">
             <div class="projectContent">
-              <h3>
-                <a href="https://github.com/atom888" target="_blank">
-                  atom888
-                </a>
+            <h3>
+                <span className="AboutTitle projectTitle"> Poddr</span>
               </h3>
-              <p>This is where I share code and work on projects.</p>
+              <br />
+
+              <a
+                href="https://github.com/LanceHebert/Podcast-Recommender-Project-2"
+                target="_blank"
+                className="projectLinkText"
+              >
+                Code
+              </a>
+
+              <a
+                className="projectLinkText"
+                href="https://www.loom.com/share/12a522060170467a842d5dc5d4b38881"
+                target="_blank"
+              >
+                Demo
+              </a>
+              <div className="projectDescription">
+                <p>
+                App allows user to search through Spotify API and like displayed podcast episodes 
+                </p>
+              </div>
             </div>
           </div>
         </div>
