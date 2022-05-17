@@ -9,14 +9,14 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 function TextBox() {
-  const medium = <FontAwesomeIcon className="AboutIcon" icon={faMedium} />;
-  const linkedin = <FontAwesomeIcon className="AboutIcon"icon={faLinkedin} />;
-  const github = <FontAwesomeIcon className="AboutIcon"icon={faGithub} />;
-  const youtube = <FontAwesomeIcon className="AboutIcon"icon={faYoutube} />;
+  const medium = <a className="AboutIcon" href="https://medium.com/@LanceHebert" target="_blank" ><FontAwesomeIcon  icon={faMedium} /></a>;
+  const linkedin = <a className="AboutIcon" href="https://www.linkedin.com/in/lance-hebert/" target="_blank" ><FontAwesomeIcon icon={faLinkedin} /></a>;
+  const github = <a className="AboutIcon" href="https://github.com/LanceHebert"  target="_blank"><FontAwesomeIcon icon={faGithub} /></a>;
+  const youtube = <a className="AboutIcon" href="https://www.youtube.com/watch?v=MnXgZ8i7UcM&list=PL-GaE70oSjOmWxBPc2xSiYvPuwALj_hsI" target="_blank" ><FontAwesomeIcon icon={faYoutube} /></a>;
 
   return (
     <div>
-      <section className="container ">
+      <section className="container " id="resume">
         <div className="AboutBox row ">
           
           <div className="AboutImg column">
@@ -43,12 +43,14 @@ function TextBox() {
             />
             </div>
             <div className="row">
-            <button className="GlowButton">Resume</button>
+           <a href="https://docs.google.com/document/d/1CuCUW7MhomgDNbrxFZcMUOEtBHZHlRpbsMG85HeEM9M/edit?usp=sharing" target="_blank"><button  className="GlowButton">Resume</button></a>
             </div>
           
           </div>
           <div className="AboutText  column">
+          <a name="resume">
             <h3 className="AboutTitle">About Me</h3>
+            </a>
             <p className="AboutText">
               Hey there, I'm a physical therapist turned software developer
               residing in Washington State.
@@ -65,7 +67,7 @@ function TextBox() {
               <br />
               Interests include: <ul><li>Web3/cryptocurrencies/blockchain</li>  <li>Health
               hacking</li>
-               <li>Augmented reality</li>.
+               <li>Augmented reality</li>
               </ul>
               <br />
               <br />
@@ -82,9 +84,9 @@ function TextBox() {
                   </div> */}
                   <div className="row AboutIcon">
                   {linkedin}
-                    {github}
-                    {medium}
-                    {youtube}
+                  {github}
+                  {medium}
+                  {youtube}
                     </div>
                 </div>
               </div>

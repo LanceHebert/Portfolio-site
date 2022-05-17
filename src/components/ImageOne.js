@@ -1,11 +1,12 @@
 import { Parallax } from "react-parallax";
 import SynthBG from "../images/japansynth.jpeg";
 
+
 const ImageOne = () => (
   <Parallax className="image" bgImage={SynthBG} strength={800}>
-    <div className="content">
+    <div className="content" id="home" >
       <p>
-        <span className="img-txt neonTextY">
+        <span className="img-txt neonTextY" >
           Software <br />
           Engineer
         </span>{" "}

@@ -6,7 +6,7 @@ const ImageTwo = () => (
     <div
       style={{ textAlign: "center", paddingTop: "60px", paddingBottom: "60px" }}
     >
-      <span className="img-txt AboutTitle">Projects</span>
+      <span className="img-txt AboutTitle" id="projects">Projects</span>
       <div class="projectContainer shrink ">
         <div class="card ">
           <div class="face face1">

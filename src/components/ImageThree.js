@@ -3,8 +3,8 @@ import StarSynth from "../images/starssynth.jpeg";
 
 const ImageThree = () => (
   <Parallax className="image" bgImage={StarSynth} strength={800}>
-    <div className="AboutTitle" style={{ textAlign: "center",paddingTop:"60px",paddingBottom:"60px" }}>
-      <span className="img-txt">Technical Skills</span>
+    <div className="AboutTitle" id="skills" style={{ textAlign: "center",paddingTop:"60px",paddingBottom:"60px" }}>
+      <span className="img-txt" >Technical Skills</span>
     </div>
 
     <div className="row1-container">
@@ -89,7 +89,7 @@ const ImageThree = () => (
     </div>
     <footer>
       <p className="attribution">
-        Design inspired by <a href="#">Jared Parsons</a>.
+        Design inspired by Jared Parsons.
       </p>
     </footer>
 
