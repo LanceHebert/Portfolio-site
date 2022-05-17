@@ -43,7 +43,7 @@ function TextBox() {
             />
             </div>
             <div className="row">
-           <a href="https://docs.google.com/document/d/1CuCUW7MhomgDNbrxFZcMUOEtBHZHlRpbsMG85HeEM9M/edit?usp=sharing" target="_blank" rel="noreferrer"><button  className="GlowButton">Resume</button></a>
+           <a href="https://drive.google.com/file/d/1apPZeqaWPYj6BVvdL5WnIhG4zZCA6b6I/view?usp=sharing" target="_blank" rel="noreferrer"><button  className="GlowButton">Resume</button></a>
             </div>
           
           </div>
