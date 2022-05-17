@@ -9,15 +9,15 @@ import ImageTwo from "./components/ImageTwo"
 function App() { 
 
   return (
-    <>
+    <div>
    
       <ResponsiveAppBar /> 
       <ImageOne />
       <TextBox />
       <ImageThree />
-      {/* <TextBox /> */}
+      
       <ImageTwo />
-    </>
+    </div>
   );
 }
 
