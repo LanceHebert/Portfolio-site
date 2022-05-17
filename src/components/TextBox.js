@@ -48,9 +48,9 @@ function TextBox() {
           
           </div>
           <div className="AboutText  column">
-          <a name="resume">
+          
             <h3 className="AboutTitle">About Me</h3>
-            </a>
+            
             <p className="AboutText">
               Hey there, I'm a physical therapist turned software developer
               residing in Washington State.
