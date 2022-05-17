@@ -10,7 +10,7 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-scroll";
-import uuid from 'react-uuid'
+
 
 
 const pages = ["home", "resume", "skills", "projects"];
