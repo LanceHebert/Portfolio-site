@@ -9,10 +9,10 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 function TextBox() {
-  const medium = <a className="AboutIcon" href="https://medium.com/@LanceHebert" target="_blank" ><FontAwesomeIcon  icon={faMedium} /></a>;
-  const linkedin = <a className="AboutIcon" href="https://www.linkedin.com/in/lance-hebert/" target="_blank" ><FontAwesomeIcon icon={faLinkedin} /></a>;
-  const github = <a className="AboutIcon" href="https://github.com/LanceHebert"  target="_blank"><FontAwesomeIcon icon={faGithub} /></a>;
-  const youtube = <a className="AboutIcon" href="https://www.youtube.com/watch?v=MnXgZ8i7UcM&list=PL-GaE70oSjOmWxBPc2xSiYvPuwALj_hsI" target="_blank" ><FontAwesomeIcon icon={faYoutube} /></a>;
+  const medium = <a className="AboutIcon" href="https://medium.com/@LanceHebert" target="_blank"  rel="noreferrer"><FontAwesomeIcon  icon={faMedium} /></a>;
+  const linkedin = <a className="AboutIcon" href="https://www.linkedin.com/in/lance-hebert/" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faLinkedin} /></a>;
+  const github = <a className="AboutIcon" href="https://github.com/LanceHebert"  target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faGithub} /></a>;
+  const youtube = <a className="AboutIcon" href="https://www.youtube.com/watch?v=MnXgZ8i7UcM&list=PL-GaE70oSjOmWxBPc2xSiYvPuwALj_hsI" target="_blank" rel="noreferrer" ><FontAwesomeIcon icon={faYoutube} /></a>;
 
   return (
     <div>
@@ -43,7 +43,7 @@ function TextBox() {
             />
             </div>
             <div className="row">
-           <a href="https://docs.google.com/document/d/1CuCUW7MhomgDNbrxFZcMUOEtBHZHlRpbsMG85HeEM9M/edit?usp=sharing" target="_blank"><button  className="GlowButton">Resume</button></a>
+           <a href="https://docs.google.com/document/d/1CuCUW7MhomgDNbrxFZcMUOEtBHZHlRpbsMG85HeEM9M/edit?usp=sharing" target="_blank" rel="noreferrer"><button  className="GlowButton">Resume</button></a>
             </div>
           
           </div>
