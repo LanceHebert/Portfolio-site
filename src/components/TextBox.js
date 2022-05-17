@@ -24,22 +24,22 @@ function TextBox() {
             <img
               className="pfp layer"
               src="../images/synthy2.png"
-              alt="Profile"
+              alt="Profile layer"
             />
             <img
               className="pfpbg3 layer"
               src="../images/synthy.png"
-              alt="Profile"
+              alt="Profile layer 2"
             />
             <img
               className="layer pfpbg2"
               src="../images/bgpfp.png"
-              alt="Profile"
+              alt="Profile layer 3"
             />
             <img
               className="layer pfpbg1"
               src="../images/blackbg.png"
-              alt="Profile"
+              alt="Profile layer 4"
             />
             </div>
             <div className="row">
