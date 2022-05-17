@@ -12,7 +12,7 @@ const ImageTwo = () => (
           <div className="face face1">
             <div className="projectContent">
               <div className="icon">
-                <img className="projectImg" src="../images/painPoint.png" />
+                <img className="projectImg" src="../images/painPoint.png" alt="project thumbnail"/>
               </div>
             </div>
           </div>
@@ -51,7 +51,7 @@ const ImageTwo = () => (
           <div className="face face1">
             <div className="projectContent">
               <div className="icon">
-              <img className="projectImg" src="../images/duelist.png" />
+              <img className="projectImg" src="../images/duelist.png" alt="project thumbnail" />
               </div>
             </div>
           </div>
@@ -89,7 +89,7 @@ const ImageTwo = () => (
           <div className="face face1">
             <div className="projectContent">
               <div className="icon">
-              <img className="projectImg" src="../images/poddr.png" />
+              <img className="projectImg" src="../images/poddr.png" alt="project thumbnail"/>
               </div>
             </div>
           </div>
