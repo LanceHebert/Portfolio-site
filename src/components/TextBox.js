@@ -61,14 +61,15 @@ function TextBox() {
               integrate my leadership background in healthcare with the
               knowledge I have gained in Ruby on Rails and JavaScript React
               based programming.
+              </p>
               <br />
               <br />
               <br />
               <br />
-              Interests include: <ul><li>Web3/cryptocurrencies/blockchain</li>  <li>Health
+              Interests include: <li>Web3/cryptocurrencies/blockchain</li>  <li>Health
               hacking</li>
                <li>Augmented reality</li>
-              </ul>
+              
               <br />
               <br />
               <div className="SocialsBox column">
@@ -90,7 +91,7 @@ function TextBox() {
                     </div>
                 </div>
               </div>
-            </p>
+           
           </div>
         </div>
       </section>

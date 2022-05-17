@@ -7,17 +7,17 @@ const ImageTwo = () => (
       style={{ textAlign: "center", paddingTop: "60px", paddingBottom: "60px" }}
     >
       <span className="img-txt AboutTitle" id="projects">Projects</span>
-      <div class="projectContainer shrink ">
-        <div class="card ">
-          <div class="face face1">
-            <div class="projectContent">
-              <div class="icon">
+      <div className="projectContainer shrink ">
+        <div className="card ">
+          <div className="face face1">
+            <div className="projectContent">
+              <div className="icon">
                 <img className="projectImg" src="../images/painPoint.png" />
               </div>
             </div>
           </div>
-          <div class="face face2">
-            <div class="projectContent">
+          <div className="face face2">
+            <div className="projectContent">
               <h3>
                 <span className="AboutTitle projectTitle"> Pain Point</span>
               </h3>
@@ -47,16 +47,16 @@ const ImageTwo = () => (
             </div>
           </div>
         </div>
-        <div class="card">
-          <div class="face face1">
-            <div class="projectContent">
-              <div class="icon">
+        <div className="card">
+          <div className="face face1">
+            <div className="projectContent">
+              <div className="icon">
               <img className="projectImg" src="../images/duelist.png" />
               </div>
             </div>
           </div>
-          <div class="face face2">
-            <div class="projectContent">
+          <div className="face face2">
+            <div className="projectContent">
             <h3>
                 <span className="AboutTitle projectTitle"> Duelist</span>
               </h3>
@@ -85,16 +85,16 @@ const ImageTwo = () => (
             </div>
           </div>
         </div>
-        <div class="card">
-          <div class="face face1">
-            <div class="projectContent">
-              <div class="icon">
+        <div className="card">
+          <div className="face face1">
+            <div className="projectContent">
+              <div className="icon">
               <img className="projectImg" src="../images/poddr.png" />
               </div>
             </div>
           </div>
-          <div class="face face2">
-            <div class="projectContent">
+          <div className="face face2">
+            <div className="projectContent">
             <h3>
                 <span className="AboutTitle projectTitle"> Poddr</span>
               </h3>
