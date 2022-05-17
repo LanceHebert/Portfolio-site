@@ -7,17 +7,17 @@ const ImageTwo = () => (
       style={{ textAlign: "center", paddingTop: "60px", paddingBottom: "60px" }}
     >
       <span className="img-txt AboutTitle" id="projects">Projects</span>
-      <div class="projectContainer shrink ">
-        <div class="card ">
-          <div class="face face1">
-            <div class="projectContent">
-              <div class="icon">
+      <div className="projectContainer shrink ">
+        <div className="card ">
+          <div className="face face1">
+            <div className="projectContent">
+              <div className="icon">
                 <img className="projectImg" src="../images/painPoint.png" />
               </div>
             </div>
           </div>
-          <div class="face face2">
-            <div class="projectContent">
+          <div className="face face2">
+            <div className="projectContent">
               <h3>
                 <span className="AboutTitle projectTitle"> Pain Point</span>
               </h3>
@@ -25,7 +25,7 @@ const ImageTwo = () => (
 
               <a
                 href="https://github.com/LanceHebert/pain_point"
-                target="_blank"
+                target="_blank" rel="noreferrer"
                 className="projectLinkText"
               >
                 Code
@@ -34,7 +34,7 @@ const ImageTwo = () => (
               <a
                 className="projectLinkText"
                 href="https://www.loom.com/share/f97df21b1b2043d1a31ca52334706479"
-                target="_blank"
+                target="_blank" rel="noreferrer"
               >
                 Demo
               </a>
@@ -47,16 +47,16 @@ const ImageTwo = () => (
             </div>
           </div>
         </div>
-        <div class="card">
-          <div class="face face1">
-            <div class="projectContent">
-              <div class="icon">
+        <div className="card">
+          <div className="face face1">
+            <div className="projectContent">
+              <div className="icon">
               <img className="projectImg" src="../images/duelist.png" />
               </div>
             </div>
           </div>
-          <div class="face face2">
-            <div class="projectContent">
+          <div className="face face2">
+            <div className="projectContent">
             <h3>
                 <span className="AboutTitle projectTitle"> Duelist</span>
               </h3>
@@ -64,7 +64,7 @@ const ImageTwo = () => (
 
               <a
                 href="https://github.com/LanceHebert/phase-4-project-react-rails-api"
-                target="_blank"
+                target="_blank" rel="noreferrer"
                 className="projectLinkText"
               >
                 Code
@@ -73,7 +73,7 @@ const ImageTwo = () => (
               <a
                 className="projectLinkText"
                 href="https://www.loom.com/share/c81c57ec61d54378a2e0977e3b1d8a62"
-                target="_blank"
+                target="_blank" rel="noreferrer"
               >
                 Demo
               </a>
@@ -85,16 +85,16 @@ const ImageTwo = () => (
             </div>
           </div>
         </div>
-        <div class="card">
-          <div class="face face1">
-            <div class="projectContent">
-              <div class="icon">
+        <div className="card">
+          <div className="face face1">
+            <div className="projectContent">
+              <div className="icon">
               <img className="projectImg" src="../images/poddr.png" />
               </div>
             </div>
           </div>
-          <div class="face face2">
-            <div class="projectContent">
+          <div className="face face2">
+            <div className="projectContent">
             <h3>
                 <span className="AboutTitle projectTitle"> Poddr</span>
               </h3>
@@ -102,7 +102,7 @@ const ImageTwo = () => (
 
               <a
                 href="https://github.com/LanceHebert/Podcast-Recommender-Project-2"
-                target="_blank"
+                target="_blank" rel="noreferrer"
                 className="projectLinkText"
               >
                 Code
@@ -111,7 +111,7 @@ const ImageTwo = () => (
               <a
                 className="projectLinkText"
                 href="https://www.loom.com/share/12a522060170467a842d5dc5d4b38881"
-                target="_blank"
+                target="_blank" rel="noreferrer"
               >
                 Demo
               </a>
