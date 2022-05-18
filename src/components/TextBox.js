@@ -118,7 +118,7 @@ function TextBox() {
             <br />
             <br />
             <Fade left>
-              Interests include: <li>Web3/cryptocurrencies/blockchain</li>{" "}
+              <span style={{fontWeight:"500"}}>Interests include:</span> <li>Web3/cryptocurrencies/blockchain</li>{" "}
               <li>Health hacking</li>
               <li>Augmented reality</li>
             </Fade>

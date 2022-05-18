@@ -23,6 +23,10 @@ code {
 p {
   text-align: center;
   /* font-size: 2vw; */
+  font-weight: 500;
+}
+li{
+  font-weight: 500;
 }
 hr {
   border: 0;
