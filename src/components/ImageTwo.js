@@ -44,8 +44,7 @@ const ImageTwo = () => (
               </a>
               <div className="projectDescription">
                 <p>
-                  App allows user to pick a physical therapist exercise plan and
-                  records user data.
+                  App allows user to pick physical therapist exercise plan and stores results.
                 </p>
               </div>
             </div>
