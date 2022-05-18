@@ -1,5 +1,8 @@
 import { Parallax } from "react-parallax";
 import SynthHD from "../images/synthHD.jpeg";
+import Bounce from 'react-reveal/Bounce';
+
+
 
 const ImageTwo = () => (
   <Parallax className="image" bgImage={SynthHD} strength={800}>
@@ -7,6 +10,7 @@ const ImageTwo = () => (
       style={{ textAlign: "center", paddingTop: "60px", paddingBottom: "60px" }}
     >
       <span className="img-txt AboutTitle" id="projects">Projects</span>
+      <Bounce left cascade>
       <div className="projectContainer shrink ">
         <div className="card ">
           <div className="face face1">
@@ -124,7 +128,9 @@ const ImageTwo = () => (
           </div>
         </div>
       </div>
+      </Bounce>
     </div>
+    
   </Parallax>
 );
 
