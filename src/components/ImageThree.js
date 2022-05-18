@@ -1,5 +1,7 @@
 import { Parallax } from "react-parallax";
 import StarSynth from "../images/starssynth.jpeg";
+import Fade from "react-reveal/Fade";
+
 
 const ImageThree = () => (
   <Parallax className="image" bgImage={StarSynth} strength={800}>
@@ -7,8 +9,11 @@ const ImageThree = () => (
       <span className="img-txt" >Technical Skills</span>
     </div>
 
+    
     <div className="row1-container">
+    <Fade>
       <div className="box box-down cyan">
+      
         <h2 className="cardTitle">Languages</h2>
         <p className="cardText">
           Ruby,Javascript
@@ -23,8 +28,10 @@ const ImageThree = () => (
           src="https://raw.githubusercontent.com/devicons/devicon/master/icons/ruby/ruby-original.svg"
           alt=""
         />
+        
       </div>
-
+      </Fade>
+      <Fade>
       <div className="box red">
         <h2 className="cardTitle">Frameworks</h2>
         <p className="cardText">
@@ -51,7 +58,8 @@ const ImageThree = () => (
           alt=""
         />
       </div>
-
+      </Fade>
+      <Fade>
       <div className="box box-down blue">
         <h2 className="cardTitle">Database Management</h2>
         <p className="cardText">
@@ -68,7 +76,9 @@ const ImageThree = () => (
         alt=""
       />
       </div>
+      </Fade>
     </div>
+    <Fade>
     <div className="row2-container">
       <div className="box orange">
         <h2 className="cardTitle">Testing & Workflow</h2>
@@ -87,6 +97,7 @@ const ImageThree = () => (
         />
       </div>
     </div>
+    </Fade>
     <footer>
       <p className="attribution">
         Design inspired by Jared Parsons.
