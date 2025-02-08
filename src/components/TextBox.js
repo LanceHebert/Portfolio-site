@@ -15,7 +15,7 @@ function TextBox() {
       className="AboutIcon"
       href="https://medium.com/@LanceHebert"
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
     >
       <FontAwesomeIcon icon={faMedium} />
     </a>
@@ -25,7 +25,7 @@ function TextBox() {
       className="AboutIcon"
       href="https://www.linkedin.com/in/lance-hebert/"
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
     >
       <FontAwesomeIcon icon={faLinkedin} />
     </a>
@@ -35,7 +35,7 @@ function TextBox() {
       className="AboutIcon"
       href="https://github.com/LanceHebert"
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
     >
       <FontAwesomeIcon icon={faGithub} />
     </a>
@@ -45,7 +45,7 @@ function TextBox() {
       className="AboutIcon"
       href="https://www.youtube.com/watch?v=MnXgZ8i7UcM&list=PL-GaE70oSjOmWxBPc2xSiYvPuwALj_hsI"
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
     >
       <FontAwesomeIcon icon={faYoutube} />
     </a>
@@ -85,7 +85,7 @@ function TextBox() {
                 <a
                   href="https://drive.google.com/file/d/1apPZeqaWPYj6BVvdL5WnIhG4zZCA6b6I/view?usp=sharing"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
                   <button className="GlowButton">Resume</button>
                 </a>

@@ -1,6 +1,7 @@
 import { Parallax } from "react-parallax";
 import SynthHD from "../images/synthHD.jpeg";
 import Bounce from 'react-reveal/Bounce';
+import React from 'react';
 
 
 
@@ -29,7 +30,7 @@ const ImageTwo = () => (
 
               <a
                 href="https://github.com/LanceHebert/pain_point"
-                target="_blank" rel="noreferrer"
+                target="_blank" rel="noopener noreferrer"
                 className="projectLinkText"
               >
                 Code
@@ -38,7 +39,7 @@ const ImageTwo = () => (
               <a
                 className="projectLinkText"
                 href="https://www.loom.com/share/f97df21b1b2043d1a31ca52334706479"
-                target="_blank" rel="noreferrer"
+                target="_blank" rel="noopener noreferrer"
               >
                 Demo
               </a>
@@ -67,7 +68,7 @@ const ImageTwo = () => (
 
               <a
                 href="https://github.com/LanceHebert/phase-4-project-react-rails-api"
-                target="_blank" rel="noreferrer"
+                target="_blank" rel="noopener noreferrer"
                 className="projectLinkText"
               >
                 Code
@@ -76,7 +77,7 @@ const ImageTwo = () => (
               <a
                 className="projectLinkText"
                 href="https://www.loom.com/share/c81c57ec61d54378a2e0977e3b1d8a62"
-                target="_blank" rel="noreferrer"
+                target="_blank" rel="noopener noreferrer"
               >
                 Demo
               </a>
@@ -105,7 +106,7 @@ const ImageTwo = () => (
 
               <a
                 href="https://github.com/LanceHebert/Podcast-Recommender-Project-2"
-                target="_blank" rel="noreferrer"
+                target="_blank" rel="noopener noreferrer"
                 className="projectLinkText"
               >
                 Code
@@ -114,7 +115,7 @@ const ImageTwo = () => (
               <a
                 className="projectLinkText"
                 href="https://www.loom.com/share/12a522060170467a842d5dc5d4b38881"
-                target="_blank" rel="noreferrer"
+                target="_blank" rel="noopener noreferrer"
               >
                 Demo
               </a>

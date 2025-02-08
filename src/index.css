@@ -827,7 +827,7 @@ hr {
   }
   .projectDescription{
     padding:5%;
-    font-size:2vh;
+    font-size:1vh;
   }
 }
 
@@ -966,5 +966,5 @@ a.projectLinkText {
 }
 .projectDescription{
   padding:5%;
-  font-size:2vh;
+  font-size:1vh;
 }
