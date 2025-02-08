@@ -1,6 +1,7 @@
 import { Parallax } from "react-parallax";
 import StarSynth from "../images/starssynth.jpeg";
 import Fade from "react-reveal/Fade";
+import React from 'react';
 
 
 const ImageThree = () => (

@@ -1,5 +1,6 @@
 import { Parallax } from "react-parallax";
 import SynthBG from "../images/japansynth.jpeg";
+import React from 'react';
 
 
 const ImageOne = () => (
