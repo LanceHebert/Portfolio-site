@@ -11,11 +11,9 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-scroll";
 
-
-
 const pages = ["home", "resume", "skills", "projects"];
 
-const ResponsiveAppBar = () => {
+const ResponsiveAppBar = React.memo(() => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -60,24 +58,23 @@ const ResponsiveAppBar = () => {
               }}
             >
               {pages.map((page) => (
-                
-                  <MenuItem
-                    key={page}
-                    onClick={() => {
-                      handleCloseNavMenu();
-                    }}
-                  >
-                    <Link
-                  activeClass="active"
-                  to={page}
-                  spy={true}
-                  smooth={true}
-                  offset={0}
-                  duration={500}
+                <MenuItem
+                  key={page}
+                  onClick={() => {
+                    handleCloseNavMenu();
+                  }}
                 >
-                    <Typography textAlign="center">{page}</Typography></Link>
-                  </MenuItem>
-                
+                  <Link
+                    activeClass="active"
+                    to={page}
+                    spy={true}
+                    smooth={true}
+                    offset={0}
+                    duration={500}
+                  >
+                    <Typography textAlign="center">{page}</Typography>
+                  </Link>
+                </MenuItem>
               ))}
             </Menu>
           </Box>
@@ -106,5 +103,5 @@ const ResponsiveAppBar = () => {
       </Container>
     </AppBar>
   );
-};
+});
 export default ResponsiveAppBar;

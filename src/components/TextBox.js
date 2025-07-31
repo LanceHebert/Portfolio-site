@@ -9,7 +9,7 @@ import {
   faMedium,
 } from "@fortawesome/free-brands-svg-icons";
 
-function TextBox() {
+const TextBox = React.memo(() => {
   const medium = (
     <a
       className="AboutIcon"
@@ -118,8 +118,8 @@ function TextBox() {
             <br />
             <br />
             <Fade left>
-              <span style={{fontWeight:"500"}}>Interests include:</span> <li>Web3/cryptocurrencies/blockchain</li>{" "}
-              <li>Health hacking</li>
+              <span style={{ fontWeight: "500" }}>Interests include:</span>{" "}
+              <li>Web3/cryptocurrencies/blockchain</li> <li>Health hacking</li>
               <li>Augmented reality</li>
             </Fade>
             <br />
@@ -131,13 +131,13 @@ function TextBox() {
                   <div>
                     <h2 className="AboutTitle">Socials</h2>
                   </div>
-                  </Fade>
-                  {/* <div row>
+                </Fade>
+                {/* <div row>
                     <button className="GlowButton">Resume</button>
                     
                     
                   </div> */}
-<Fade>
+                <Fade>
                   <div className="row AboutIcon">
                     {linkedin}
                     {github}
@@ -152,6 +152,6 @@ function TextBox() {
       </section>
     </div>
   );
-}
+});
 
 export default TextBox;

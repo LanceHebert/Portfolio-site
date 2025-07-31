@@ -227,8 +227,10 @@ hr {
   font-family: Neonderthaw;
 }
 .neonTextG {
-  animation: flickerG 3s infinite alternate;
+  /* animation: flickerG 3s infinite alternate; */
   color: #fff;
+  text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #0fa,
+    0 0 80px #0fa, 0 0 90px #0fa;
 }
 
 /* Flickering animation */
@@ -254,7 +256,7 @@ hr {
   /* animation: flickerY 3s infinite alternate; */
   color: #fff;
   text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #ffdf6b,
-    0 0 80px #ffdf6b, 0 0 90px #ffdf6b, 0 0 100px #ffdf6b, 0 0 150px #ffdf6b;
+    0 0 80px #ffdf6b, 0 0 90px #ffdf6b;
 }
 
 /* Flickering animation */
@@ -313,13 +315,64 @@ hr {
   }
 }
 
+/* Chatbot Arrow Styles */
+.chatbot-arrow {
+  position: fixed;
+  bottom: 90px;
+  right: 16px;
+  z-index: 1000;
+  width: 30px;
+  height: 30px;
+}
+
+.chatbot-arrow span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-bottom: 2px solid #00ffff;
+  border-right: 2px solid #00ffff;
+  transform: rotate(45deg);
+  margin: -2px;
+  animation: chatbot-arrow-down 2s infinite;
+}
+
+.chatbot-arrow span:nth-child(2) {
+  animation-delay: -0.2s;
+}
+
+.chatbot-arrow span:nth-child(3) {
+  animation-delay: -0.4s;
+}
+
+@keyframes chatbot-arrow-down {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-5px, -5px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+}
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+  .chatbot-label,
+  .chatbot-arrow {
+    display: none;
+  }
+}
+
 
 /* CSS */
 .GlowButton1 {
   
   background-color: #fde89f;
   border-radius: 100px;
-  box-shadow: rgba(255, 223, 107,.2) 0 -25px 18px -14px inset,rgba(255, 223, 107,.15) 0 1px 2px,rgba(255, 223, 107,.15) 0 2px 4px,rgba(255, 223, 107,.15) 0 4px 8px,rgba(255, 223, 107,.15) 0 8px 16px,rgba(255, 223, 107,.15) 0 16px 32px;
+  box-shadow: rgba(255, 223, 107,.2) 0 -25px 18px -14px inset,rgba(255, 223, 107,.15) 0 1px 2px,rgba(255, 223, 107,.15) 0 2px 4px,rgba(255, 223, 107,.15) 0 4px 8px;
   color: #005f99;
   text-shadow: 1px 1px black;
   cursor: pointer;
@@ -337,7 +390,7 @@ hr {
 }
 
 .GlowButton1:hover {
-  box-shadow: rgba(255, 223, 107,.35) 0 -25px 18px -14px inset,rgba(255, 223, 107,.25) 0 1px 2px,rgba(255, 223, 107,.25) 0 2px 4px,rgba(248, 107, 255, 0.25) 0 4px 8px,rgba(244, 107, 251, 0.25) 0 8px 16px,rgba(255, 107, 253, 0.515) 0 16px 32px;
+  box-shadow: rgba(255, 223, 107,.35) 0 -25px 18px -14px inset,rgba(255, 223, 107,.25) 0 1px 2px,rgba(255, 223, 107,.25) 0 2px 4px,rgba(248, 107, 255, 0.25) 0 4px 8px;
   transform: scale(1.05) rotate(-1deg);
 }
 
@@ -385,7 +438,7 @@ hr {
   -webkit-filter: blur(5px);
   width: calc(100% + 4px);
   height: calc(100% + 4px);
-  animation: glowing-GlowButton 20s linear infinite;
+  animation: glowing-GlowButton 30s linear infinite;
   transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
 }
