@@ -184,6 +184,11 @@ async function sendToOllama(message) {
 
 // Simulated response (fallback)
 function getSimulatedResponse(message) {
+  // Handle null, undefined, or empty messages
+  if (!message || typeof message !== "string") {
+    return SIMULATED_RESPONSES.default;
+  }
+
   const lowerMessage = message.toLowerCase();
 
   if (lowerMessage.includes("experience") || lowerMessage.includes("work")) {
