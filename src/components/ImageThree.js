@@ -1,6 +1,5 @@
 import { Parallax } from "react-parallax";
 import StarSynth from "../images/starssynth.jpeg";
-import Fade from "react-reveal/Fade";
 import React from "react";
 
 const ImageThree = React.memo(() => (
@@ -14,7 +13,7 @@ const ImageThree = React.memo(() => (
     </div>
 
     <div className="row1-container">
-      <Fade>
+      <div className="fade-in">
         <div className="box box-down cyan">
           <h2 className="cardTitle">Languages</h2>
           <p className="cardText">Ruby,Javascript</p>
@@ -29,8 +28,8 @@ const ImageThree = React.memo(() => (
             alt=""
           />
         </div>
-      </Fade>
-      <Fade>
+      </div>
+      <div className="fade-in">
         <div className="box red">
           <h2 className="cardTitle">Frameworks</h2>
           <p className="cardText">Bootstrap,Rails,React,HTML5</p>
@@ -55,8 +54,8 @@ const ImageThree = React.memo(() => (
             alt=""
           />
         </div>
-      </Fade>
-      <Fade>
+      </div>
+      <div className="fade-in">
         <div className="box box-down blue">
           <h2 className="cardTitle">Database Management</h2>
           <p className="cardText">PostgreSQL,SQLite</p>
@@ -71,9 +70,9 @@ const ImageThree = React.memo(() => (
             alt=""
           />
         </div>
-      </Fade>
+      </div>
     </div>
-    <Fade>
+    <div className="fade-in">
       <div className="row2-container">
         <div className="box orange">
           <h2 className="cardTitle">Testing & Workflow</h2>
@@ -90,7 +89,7 @@ const ImageThree = React.memo(() => (
           />
         </div>
       </div>
-    </Fade>
+    </div>
     <footer>
       <p className="attribution">Design inspired by Jared Parsons.</p>
     </footer>

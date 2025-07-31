@@ -1,6 +1,5 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Fade from "react-reveal/Fade";
 
 import {
   faLinkedin,
@@ -57,7 +56,7 @@ const TextBox = React.memo(() => {
         <div className="AboutBox row ">
           <div className="AboutImg column">
             <div className="row pfpRow">
-              <Fade left cascade>
+              <div className="fade-in-left">
                 <img
                   className="pfp layer"
                   src="../images/synthy2.png"
@@ -78,10 +77,10 @@ const TextBox = React.memo(() => {
                   src="../images/blackbg.png"
                   alt="Profile layer 4"
                 />
-              </Fade>
+              </div>
             </div>
             <div className="row">
-              <Fade left>
+              <div className="fade-in-left">
                 <a
                   href="https://drive.google.com/file/d/1smgOzGR_0CeN1sRE9huGfoDObgwz7vlm/view?usp=sharing"
                   target="_blank"
@@ -89,13 +88,13 @@ const TextBox = React.memo(() => {
                 >
                   <button className="GlowButton">Resume</button>
                 </a>
-              </Fade>
+              </div>
             </div>
           </div>
           <div className="AboutText  column">
-            <Fade left>
+            <div className="fade-in-left">
               <h3 className="AboutTitle">About Me</h3>
-            </Fade>
+            </div>
 
             <p className="AboutText">
               <Fade left>

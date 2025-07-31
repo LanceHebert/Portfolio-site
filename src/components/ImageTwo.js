@@ -1,6 +1,5 @@
 import { Parallax } from "react-parallax";
 import SynthHD from "../images/synthHD.jpeg";
-import Bounce from "react-reveal/Bounce";
 import React from "react";
 
 const ImageTwo = React.memo(() => (
@@ -11,7 +10,7 @@ const ImageTwo = React.memo(() => (
       <span className="img-txt AboutTitle" id="projects">
         Projects
       </span>
-      <Bounce left cascade>
+      <div className="bounce-in-left">
         <div className="projectContainer shrink ">
           <div className="card ">
             <div className="face face1">
@@ -146,7 +145,7 @@ const ImageTwo = React.memo(() => (
             </div>
           </div>
         </div>
-      </Bounce>
+      </div>
     </div>
   </Parallax>
 ));
