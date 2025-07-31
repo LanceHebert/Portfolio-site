@@ -223,7 +223,7 @@ describe("llmService", () => {
       const result = await sendMessageToLLM("Test message");
 
       expect(result).toBeDefined();
-      expect(typeof result).toBe('string');
+      expect(typeof result).toBe("string");
     });
 
     test("should handle response without expected fields", async () => {
@@ -235,7 +235,7 @@ describe("llmService", () => {
       const result = await sendMessageToLLM("Test message");
 
       expect(result).toBeDefined();
-      expect(typeof result).toBe('string');
+      expect(typeof result).toBe("string");
     });
 
     test("should handle timeout scenarios", async () => {
@@ -257,7 +257,7 @@ describe("llmService", () => {
 
       // Should fall back to simulated response due to timeout
       expect(result).toBeDefined();
-      expect(typeof result).toBe('string');
+      expect(typeof result).toBe("string");
     }, 10000); // Increase timeout for this test
   });
 });

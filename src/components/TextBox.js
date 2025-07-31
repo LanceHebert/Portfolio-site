@@ -97,53 +97,53 @@ const TextBox = React.memo(() => {
             </div>
 
             <p className="AboutText">
-              <Fade left>
+              <div className="fade-in-left">
                 Hey there, I'm a physical therapist turned software developer
                 residing in Washington State.
-              </Fade>
+              </div>
               <br />
               <br />
-              <Fade left>
+              <div className="fade-in-left">
                 The "Pandemic Pivot" allowed me to reassess my career choice and
                 start pursuing something I am passionate about. I am excited to
                 integrate my leadership background in healthcare with the
                 knowledge I have gained in Ruby on Rails and JavaScript React
                 based programming.
-              </Fade>
+              </div>
             </p>
 
             <br />
             <br />
             <br />
             <br />
-            <Fade left>
+            <div className="fade-in-left">
               <span style={{ fontWeight: "500" }}>Interests include:</span>{" "}
               <li>Web3/cryptocurrencies/blockchain</li> <li>Health hacking</li>
               <li>Augmented reality</li>
-            </Fade>
+            </div>
             <br />
             <br />
             <div className="SocialsBox column">
               <hr />
               <div>
-                <Fade>
+                <div className="fade-in">
                   <div>
                     <h2 className="AboutTitle">Socials</h2>
                   </div>
-                </Fade>
+                </div>
                 {/* <div row>
                     <button className="GlowButton">Resume</button>
                     
                     
                   </div> */}
-                <Fade>
+                <div className="fade-in">
                   <div className="row AboutIcon">
                     {linkedin}
                     {github}
                     {medium}
                     {youtube}
                   </div>
-                </Fade>
+                </div>
               </div>
             </div>
           </div>
