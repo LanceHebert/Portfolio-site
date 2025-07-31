@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 @font-face {
   font-family: streamster;
   src: url("fonts/Streamster.ttf");
@@ -98,11 +103,25 @@ hr {
 }
 .AboutImg {
   position: relative;
-  padding-top: 10%;
+  padding-top: 0;
+  /* margin-top: -65vh; */
   /* min-height: 50%; */
-  /* justify-content: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   min-width: 400px;
+}
+
+/* Responsive adjustments for different screen sizes */
+@media (min-width: 692px) {
+  .AboutImg {
+    margin-top: -100vh;
+  }
+}
+
+@media (max-width: 670px) {
+  
 }
 
 .AboutTitle {
@@ -114,13 +133,28 @@ hr {
   margin: 0;
 }
 .AboutText {
+  min-width: 250px;
   margin: auto;
   text-align: left;
   font-size: 1.8vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   /* max-height: 300px; */
   /* background: rgba(128, 128, 128, 0.031); */
   /* text-shadow: .5px 0px #ffdf6b; */
   /* padding: 0% 15%; */
+}
+
+/* Bullet point styling for About Me section */
+.AboutText .fade-in-left {
+  text-align: left;
+  margin-left: 20px;
+}
+
+.AboutText .bullet-point {
+  font-weight: bold;
+  margin-left: 40px;
 }
 
 .SocialsBox {
@@ -227,8 +261,10 @@ hr {
   font-family: Neonderthaw;
 }
 .neonTextG {
-  animation: flickerG 3s infinite alternate;
+  /* animation: flickerG 3s infinite alternate; */
   color: #fff;
+  text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #0fa,
+    0 0 80px #0fa, 0 0 90px #0fa;
 }
 
 /* Flickering animation */
@@ -254,7 +290,7 @@ hr {
   /* animation: flickerY 3s infinite alternate; */
   color: #fff;
   text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #ffdf6b,
-    0 0 80px #ffdf6b, 0 0 90px #ffdf6b, 0 0 100px #ffdf6b, 0 0 150px #ffdf6b;
+    0 0 80px #ffdf6b, 0 0 90px #ffdf6b;
 }
 
 /* Flickering animation */
@@ -313,13 +349,64 @@ hr {
   }
 }
 
+/* Chatbot Arrow Styles */
+.chatbot-arrow {
+  position: fixed;
+  bottom: 90px;
+  right: 16px;
+  z-index: 1000;
+  width: 30px;
+  height: 30px;
+}
+
+.chatbot-arrow span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-bottom: 2px solid #00ffff;
+  border-right: 2px solid #00ffff;
+  transform: rotate(45deg);
+  margin: -2px;
+  animation: chatbot-arrow-down 2s infinite;
+}
+
+.chatbot-arrow span:nth-child(2) {
+  animation-delay: -0.2s;
+}
+
+.chatbot-arrow span:nth-child(3) {
+  animation-delay: -0.4s;
+}
+
+@keyframes chatbot-arrow-down {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-5px, -5px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+}
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+  .chatbot-label,
+  .chatbot-arrow {
+    display: none;
+  }
+}
+
 
 /* CSS */
 .GlowButton1 {
   
   background-color: #fde89f;
   border-radius: 100px;
-  box-shadow: rgba(255, 223, 107,.2) 0 -25px 18px -14px inset,rgba(255, 223, 107,.15) 0 1px 2px,rgba(255, 223, 107,.15) 0 2px 4px,rgba(255, 223, 107,.15) 0 4px 8px,rgba(255, 223, 107,.15) 0 8px 16px,rgba(255, 223, 107,.15) 0 16px 32px;
+  box-shadow: rgba(255, 223, 107,.2) 0 -25px 18px -14px inset,rgba(255, 223, 107,.15) 0 1px 2px,rgba(255, 223, 107,.15) 0 2px 4px,rgba(255, 223, 107,.15) 0 4px 8px;
   color: #005f99;
   text-shadow: 1px 1px black;
   cursor: pointer;
@@ -337,7 +424,7 @@ hr {
 }
 
 .GlowButton1:hover {
-  box-shadow: rgba(255, 223, 107,.35) 0 -25px 18px -14px inset,rgba(255, 223, 107,.25) 0 1px 2px,rgba(255, 223, 107,.25) 0 2px 4px,rgba(248, 107, 255, 0.25) 0 4px 8px,rgba(244, 107, 251, 0.25) 0 8px 16px,rgba(255, 107, 253, 0.515) 0 16px 32px;
+  box-shadow: rgba(255, 223, 107,.35) 0 -25px 18px -14px inset,rgba(255, 223, 107,.25) 0 1px 2px,rgba(255, 223, 107,.25) 0 2px 4px,rgba(248, 107, 255, 0.25) 0 4px 8px;
   transform: scale(1.05) rotate(-1deg);
 }
 
@@ -385,7 +472,7 @@ hr {
   -webkit-filter: blur(5px);
   width: calc(100% + 4px);
   height: calc(100% + 4px);
-  animation: glowing-GlowButton 20s linear infinite;
+  animation: glowing-GlowButton 30s linear infinite;
   transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
 }
@@ -432,7 +519,10 @@ hr {
 }
 .pfpRow{
   min-height: 25vh;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 /* Technical Skills  */
 /* ****************************************************** */
@@ -466,14 +556,20 @@ hr {
   .box.box {
     height: 25vw;
     padding-top:10px;
+    margin: 10px;
+  }
+  
+  .AboutTitle {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
 }
 .cardText.cardText{
-  font-size:3vw;
+  font-size: 0.7rem;
 }
 .skillIcon.skillIcon{
   float: right;
   width: 30px;
-}
 }
 
 .box p {
@@ -499,11 +595,32 @@ hr {
   }
 } */
 
-@media (max-width: 950px) and (min-width: 450px) {
+@media (max-width: 949px) and (min-width: 450px) {
+  .row1-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+  }
+  
+  .row2-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 10px 25px;
+  }
+  
   .box {
       text-align: center;
-      height: 140px;
-      width:90%
+      height: 120px;
+      padding: 15px;
+      margin: 10px 25px;
+      overflow: visible;
+  }
+  .box.orange{
+    width: 100%;
   }
   .cardText.cardText{
     font-size:.6rem;
@@ -511,6 +628,16 @@ hr {
   .skillIcon.skillIcon{
     float: right;
     width: 35px;
+    margin-top: -20px;
+  }
+  
+  .AboutTitle {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  
+  .row1-container .fade-in {
+    width: 100%;
   }
 }
 
@@ -548,14 +675,15 @@ hr {
       top: 150px;
   }
   .box {
-      width: 20%;
-   
+      width: 300px;
+      min-height: 250px;
+      margin: 15px;
   }
  
   
 }
 .cardText{
-  font-size:1vw;
+  font-size: 0.8rem;
 }
 .cardTitle{
   color:#fde89f;
@@ -573,7 +701,7 @@ hr {
     transform:scale(0.5);
     }
   .projectContainer.projectContainer {
-    width: 100vw;
+    width: 100%;
     position: relative;
     display: flex;   
     flex-wrap:wrap;
@@ -705,7 +833,7 @@ hr {
     transform:scale(0.8);
     }
     .projectContainer {
-      width: 100vw;
+      width: 100%;
       position: relative;
       display: flex;   
       flex-wrap:wrap;
@@ -719,8 +847,7 @@ hr {
     position: relative;
     border-radius: 10px;
     padding:2%;
-    margin: 5%;
-    ;
+    margin: 25px;    
     height:200px;
   }
   
@@ -841,7 +968,7 @@ hr {
 
 
 .projectContainer {
-    width: 100vw;
+    width: 100%;
     position: relative;
     display: flex;   
     flex-wrap:wrap;
@@ -967,4 +1094,317 @@ a.projectLinkText {
 .projectDescription{
   padding:5%;
   font-size:1vh;
+}
+
+/* Animation classes to replace react-reveal */
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.fade-in-left.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.fade-in.animate {
+  opacity: 1;
+}
+
+.bounce-in-left {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.bounce-in-left.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Ensure proper layout for animated elements */
+.fade-in-left,
+.fade-in,
+.bounce-in-left {
+  display: block;
+  /* width: 100%; */
+}
+
+/* Ensure skills boxes maintain their structure when animated */
+.box .fade-in {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Add spacing between profile images and resume button */
+.AboutImg .row:not(.pfpRow) {
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Fix layout issues with profile images */
+.pfpRow .fade-in-left {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Position resume button much lower on the page */
+.AboutImg .row:not(.pfpRow) .fade-in-left {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+/* Ensure profile images are properly contained */
+.pfpRow .fade-in-left {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+/* Make sure the profile image layers stack properly */
+.pfpRow .layer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Ensure boxes maintain their layout */
+.box {
+  position: relative;
+  min-height: 200px;
+}
+
+/* Fix skill icons positioning */
+.skillIcon {
+  float: right;
+  width: 50px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure box content stays contained */
+.box h2,
+.box p {
+  position: relative;
+  z-index: 1;
+}
+
+/* Fix social icons layout */
+.AboutIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Section header styling to replace inline styles */
+.section-header {
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* Responsive adjustments for section headers */
+@media (max-width: 949px) and (min-width: 450px) {
+  .section-header {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  
+  .box {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 450px) {
+  .section-header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .box {
+    min-height: auto;
+  }
+}
+
+/* Converted inline styles to CSS classes */
+
+/* TextBox component - interests text */
+.interests-label {
+  font-weight: 500;
+}
+
+/* ResponsiveAppBar component - app bar background */
+.app-bar-custom {
+  background: rgba(0,0,0,.9) !important;
+}
+
+/* Navigation text styling - same font and glow as Software Engineer */
+.app-bar-custom .MuiTypography-root,
+.app-bar-custom .MuiButton-root,
+.app-bar-custom a {
+  font-family: Streamster !important;
+  color: #fff !important;
+  text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #fff, 0 0 80px #fff;
+  text-transform: capitalize;
+  font-weight: normal;
+  letter-spacing: 1px;
+  font-size: 1.6rem !important;
+}
+
+.app-bar-custom .MuiButton-root:hover,
+.app-bar-custom .MuiTypography-root:hover,
+.app-bar-custom a:hover {
+  color: #ffdf6b !important;
+  text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #ffdf6b, 0 0 80px #ffdf6b, 0 0 90px #ffdf6b;
+}
+
+/* AIChatbot component - icon styles */
+.chatbot-icon {
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(0 0 5px #00ffff);
+}
+
+.chatbot-avatar-icon {
+  width: 20px;
+  height: 20px;
+  filter: drop-shadow(0 0 3px #00ffff);
+}
+
+/* AIChatbot component - dialog content */
+.chatbot-dialog-content {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* AIChatbot component - messages area */
+.chatbot-messages-area {
+  flex: 1;
+  overflow: auto;
+  padding: 16px;
+  background: #000000;
+  border: 1px solid #00ffff;
+}
+
+/* AIChatbot component - message container */
+.chatbot-message-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.chatbot-message-container.bot {
+  justify-content: flex-start;
+}
+
+/* AIChatbot component - message wrapper */
+.chatbot-message-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  max-width: 80%;
+}
+
+/* AIChatbot component - avatar */
+.chatbot-avatar {
+  background-color: #00ffff;
+  width: 32px;
+  height: 32px;
+  box-shadow: 0 0 10px #00ffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* AIChatbot component - message paper */
+.chatbot-message-paper {
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  border: 1px solid #00ffff;
+}
+
+.chatbot-message-paper.user {
+  background-color: rgba(0, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.chatbot-message-paper.bot {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #00ffff;
+}
+
+/* AIChatbot component - message text */
+.chatbot-message-text {
+  white-space: pre-line;
+}
+
+.chatbot-message-text.user {
+  text-shadow: 0 0 2px #ffffff;
+}
+
+.chatbot-message-text.bot {
+  text-shadow: 0 0 2px #00ffff;
+}
+
+/* AIChatbot component - loading paper */
+.chatbot-loading-paper {
+  padding: 16px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #00ffff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+/* AIChatbot component - input area */
+.chatbot-input-area {
+  padding: 16px;
+  border-top: 1px solid #00ffff;
+  background: #000000;
+}
+
+.chatbot-input-wrapper {
+  display: flex;
+  gap: 8px;
+}
+
+/* AIChatbot component - send button */
+.chatbot-send-button {
+  align-self: flex-end;
+  background-color: #00ffff;
+  color: #000000;
+  box-shadow: 0 0 15px #00ffff;
+}
+
+.chatbot-send-button:hover {
+  background-color: #33ffff;
+  box-shadow: 0 0 20px #33ffff;
+}
+
+.chatbot-send-button:disabled {
+  background-color: rgba(0, 255, 255, 0.3);
+  box-shadow: none;
 }

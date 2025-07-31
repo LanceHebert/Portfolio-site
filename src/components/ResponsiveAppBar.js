@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -11,11 +11,9 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-scroll";
 
-
-
 const pages = ["home", "resume", "skills", "projects"];
 
-const ResponsiveAppBar = () => {
+const ResponsiveAppBar = React.memo(() => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -27,7 +25,7 @@ const ResponsiveAppBar = () => {
   };
 
   return (
-    <AppBar style={{ background: "rgba(0,0,0,.9)" }}>
+    <AppBar className="app-bar-custom">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -60,24 +58,31 @@ const ResponsiveAppBar = () => {
               }}
             >
               {pages.map((page) => (
-                
-                  <MenuItem
-                    key={page}
-                    onClick={() => {
-                      handleCloseNavMenu();
-                    }}
-                  >
-                    <Link
-                  activeClass="active"
-                  to={page}
-                  spy={true}
-                  smooth={true}
-                  offset={0}
-                  duration={500}
+                <MenuItem
+                  key={page}
+                  onClick={() => {
+                    handleCloseNavMenu();
+                  }}
                 >
-                    <Typography textAlign="center">{page}</Typography></Link>
-                  </MenuItem>
-                
+                  <Link
+                    activeClass="active"
+                    to={page}
+                    spy={true}
+                    smooth={true}
+                    offset={
+                      page === "resume"
+                        ? -175
+                        : page === "skills"
+                        ? -75
+                        : page === "projects"
+                        ? -150
+                        : 0
+                    }
+                    duration={500}
+                  >
+                    <Typography textAlign="center">{page}</Typography>
+                  </Link>
+                </MenuItem>
               ))}
             </Menu>
           </Box>
@@ -94,7 +99,15 @@ const ResponsiveAppBar = () => {
                   to={page}
                   spy={true}
                   smooth={true}
-                  offset={0}
+                  offset={
+                    page === "resume"
+                      ? -175
+                      : page === "skills"
+                      ? -75
+                      : page === "projects"
+                      ? -150
+                      : 0
+                  }
                   duration={500}
                 >
                   {page}
@@ -106,5 +119,5 @@ const ResponsiveAppBar = () => {
       </Container>
     </AppBar>
   );
-};
+});
 export default ResponsiveAppBar;

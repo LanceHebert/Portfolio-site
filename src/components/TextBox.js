@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Fade from "react-reveal/Fade";
+import ScrollAnimation from "./ScrollAnimation";
 
 import {
   faLinkedin,
@@ -9,7 +9,7 @@ import {
   faMedium,
 } from "@fortawesome/free-brands-svg-icons";
 
-function TextBox() {
+const TextBox = React.memo(() => {
   const medium = (
     <a
       className="AboutIcon"
@@ -57,7 +57,7 @@ function TextBox() {
         <div className="AboutBox row ">
           <div className="AboutImg column">
             <div className="row pfpRow">
-              <Fade left cascade>
+              <ScrollAnimation className="fade-in-left">
                 <img
                   className="pfp layer"
                   src="../images/synthy2.png"
@@ -78,10 +78,10 @@ function TextBox() {
                   src="../images/blackbg.png"
                   alt="Profile layer 4"
                 />
-              </Fade>
+              </ScrollAnimation>
             </div>
             <div className="row">
-              <Fade left>
+              <ScrollAnimation className="fade-in-left">
                 <a
                   href="https://drive.google.com/file/d/1smgOzGR_0CeN1sRE9huGfoDObgwz7vlm/view?usp=sharing"
                   target="_blank"
@@ -89,62 +89,56 @@ function TextBox() {
                 >
                   <button className="GlowButton">Resume</button>
                 </a>
-              </Fade>
+              </ScrollAnimation>
             </div>
           </div>
           <div className="AboutText  column">
-            <Fade left>
+            <ScrollAnimation className="fade-in-left">
               <h3 className="AboutTitle">About Me</h3>
-            </Fade>
+            </ScrollAnimation>
 
             <p className="AboutText">
-              <Fade left>
-                Hey there, I'm a physical therapist turned software developer
-                residing in Washington State.
-              </Fade>
+              <ScrollAnimation className="fade-in-left">
+                Hi, I'm Lance Hebert. The "Pandemic Pivot" took me from
+                practicing physical therapy to 3+ years as a full-time software
+                engineer on-staff at a fast-paced digital marketing agency. I build accessible,
+                high-performance Rails & React apps—raising Lighthouse scores
+                from the 40s into the 90s, shaving 40 points off PageSpeed
+                Insights, and mentoring junior devs on WCAG 2.1 AA and
+                headless-CMS best practices.
+              </ScrollAnimation>
               <br />
               <br />
-              <Fade left>
-                The "Pandemic Pivot" allowed me to reassess my career choice and
-                start pursuing something I am passionate about. I am excited to
-                integrate my leadership background in healthcare with the
-                knowledge I have gained in Ruby on Rails and JavaScript React
-                based programming.
-              </Fade>
+              <ScrollAnimation className="fade-in-left">
+                My healthcare background sharpened my leadership, empathy, and
+                attention to detail—skills I apply daily to write clean code and
+                deliver meaningful user experiences. Off-hours you'll find me on
+                the ice playing hockey, experimenting with AI/Web3/AR projects,
+                or leveling up in PC games.
+              </ScrollAnimation>
             </p>
 
-            <br />
-            <br />
-            <br />
-            <br />
-            <Fade left>
-              <span style={{fontWeight:"500"}}>Interests include:</span> <li>Web3/cryptocurrencies/blockchain</li>{" "}
-              <li>Health hacking</li>
-              <li>Augmented reality</li>
-            </Fade>
-            <br />
-            <br />
             <div className="SocialsBox column">
               <hr />
               <div>
-                <Fade>
+                <ScrollAnimation className="fade-in">
                   <div>
                     <h2 className="AboutTitle">Socials</h2>
                   </div>
-                  </Fade>
-                  {/* <div row>
+                </ScrollAnimation>
+                {/* <div row>
                     <button className="GlowButton">Resume</button>
                     
                     
                   </div> */}
-<Fade>
+                <ScrollAnimation className="fade-in">
                   <div className="row AboutIcon">
                     {linkedin}
                     {github}
                     {medium}
                     {youtube}
                   </div>
-                </Fade>
+                </ScrollAnimation>
               </div>
             </div>
           </div>
@@ -152,6 +146,6 @@ function TextBox() {
       </section>
     </div>
   );
-}
+});
 
 export default TextBox;

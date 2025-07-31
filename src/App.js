@@ -1,24 +1,24 @@
-
 import ResponsiveAppBar from "./components/ResponsiveAppBar";
 import React from "react";
-import ImageOne from "./components/ImageOne";
-import ImageThree from "./components/ImageThree";
+import HeroSection from "./components/HeroSection";
+import SkillsSection from "./components/SkillsSection";
 import TextBox from "./components/TextBox";
-import ImageTwo from "./components/ImageTwo"
+import ProjectsSection from "./components/ProjectsSection";
+import AIChatbot from "./components/AIChatbot";
 
-function App() { 
-
+const App = React.memo(() => {
   return (
     <div>
-   
-      <ResponsiveAppBar /> 
-      <ImageOne />
+      <ResponsiveAppBar />
+      <HeroSection />
       <TextBox />
-      <ImageThree />
-      
-      <ImageTwo />
+      <SkillsSection />
+      <ProjectsSection />
+      <AIChatbot />
     </div>
   );
-}
+});
+
+App.displayName = "React.memo";
 
 export default App;

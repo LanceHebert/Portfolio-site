@@ -1,13 +1,12 @@
 import { Parallax } from "react-parallax";
 import SynthBG from "../images/japansynth.jpeg";
-import React from 'react';
+import React from "react";
 
-
-const ImageOne = () => (
+const HeroSection = React.memo(() => (
   <Parallax className="image" bgImage={SynthBG} strength={800}>
-    <div className="content" id="home" >
+    <div className="content" id="home">
       <p>
-        <span className="img-txt neonTextY" >
+        <span className="img-txt neonTextY">
           Software <br />
           Engineer
         </span>{" "}
@@ -15,12 +14,12 @@ const ImageOne = () => (
       </p>
 
       <div className="arrow">
-                <span></span>
-                <span></span>
-                <span></span>
-  </div>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </Parallax>
-);
+));
 
-export default ImageOne;
+export default HeroSection;
