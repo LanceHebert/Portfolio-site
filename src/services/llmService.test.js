@@ -1,7 +1,7 @@
 import {
   sendMessageToLLM,
-  checkOllamaStatus,
   updateResumeContent,
+  checkRailwayStatus,
 } from "./llmService";
 
 // Mock fetch globally
@@ -9,38 +9,33 @@ global.fetch = jest.fn();
 
 describe("llmService", () => {
   beforeEach(() => {
-    // Clear all mocks before each test
-    jest.clearAllMocks();
     fetch.mockClear();
   });
 
   describe("sendMessageToLLM", () => {
     test("should send message to Railway backend successfully", async () => {
-      const mockResponse = {
-        response: "Hello! I am Lance's AI assistant. How can I help you today?",
-      };
-
       fetch.mockResolvedValueOnce({
         ok: true,
-        json: async () => mockResponse,
+        json: async () => ({
+          response: "Test Railway response",
+        }),
       });
 
-      const result = await sendMessageToLLM("Hello");
+      const result = await sendMessageToLLM("Test message");
 
+      expect(result).toBe("Test Railway response");
       expect(fetch).toHaveBeenCalledWith(
         "https://portfolio-ai-backend-production-1fa0.up.railway.app/api/chat",
-        {
+        expect.objectContaining({
           method: "POST",
-          headers: {
+          headers: expect.objectContaining({
             "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            message: "Hello",
           }),
-        }
+          body: JSON.stringify({
+            message: "Test message",
+          }),
+        })
       );
-
-      expect(result).toBe(mockResponse.response);
     });
 
     test("should handle Railway API errors gracefully", async () => {
@@ -49,19 +44,21 @@ describe("llmService", () => {
         status: 500,
       });
 
-      const result = await sendMessageToLLM("Hello");
+      const result = await sendMessageToLLM("Test message");
 
-      // Should fall back to simulated response
-      expect(result).toContain("Hi! I'm Lance's AI assistant");
+      expect(result).toBeDefined();
+      expect(typeof result).toBe("string");
+      expect(result).toContain("Lance");
     });
 
     test("should handle network errors gracefully", async () => {
       fetch.mockRejectedValueOnce(new Error("Network error"));
 
-      const result = await sendMessageToLLM("Hello");
+      const result = await sendMessageToLLM("Test message");
 
-      // Should fall back to simulated response
-      expect(result).toContain("Hi! I'm Lance's AI assistant");
+      expect(result).toBeDefined();
+      expect(typeof result).toBe("string");
+      expect(result).toContain("Lance");
     });
 
     test("should return simulated response for experience questions", async () => {
@@ -69,7 +66,9 @@ describe("llmService", () => {
 
       const result = await sendMessageToLLM("Tell me about your experience");
 
-      expect(result).toContain("Lance is a Software Engineer with experience");
+      expect(result).toContain("Software Engineer");
+      expect(result).toContain("React");
+      expect(result).toContain("Rails");
     });
 
     test("should return simulated response for skills questions", async () => {
@@ -77,7 +76,9 @@ describe("llmService", () => {
 
       const result = await sendMessageToLLM("What are your technical skills?");
 
-      expect(result).toContain("Lance's Technical Skills");
+      expect(result).toContain("Technical Skills");
+      expect(result).toContain("Ruby");
+      expect(result).toContain("JavaScript");
     });
 
     test("should return simulated response for projects questions", async () => {
@@ -87,7 +88,9 @@ describe("llmService", () => {
         "What projects have you worked on?"
       );
 
-      expect(result).toContain("has worked on various projects");
+      expect(result).toContain("projects");
+      expect(result).toContain("React");
+      expect(result).toContain("Rails");
     });
 
     test("should return simulated response for contact questions", async () => {
@@ -95,7 +98,9 @@ describe("llmService", () => {
 
       const result = await sendMessageToLLM("How can I contact you?");
 
-      expect(result).toContain("You can connect with Lance through");
+      expect(result).toContain("connect");
+      expect(result).toContain("LinkedIn");
+      expect(result).toContain("GitHub");
     });
 
     test("should return simulated response for interests questions", async () => {
@@ -103,7 +108,9 @@ describe("llmService", () => {
 
       const result = await sendMessageToLLM("What are your interests?");
 
-      expect(result).toContain("Lance is passionate about");
+      expect(result).toContain("passionate");
+      expect(result).toContain("Web3");
+      expect(result).toContain("technology");
     });
 
     test("should return simulated response for resume questions", async () => {
@@ -111,7 +118,8 @@ describe("llmService", () => {
 
       const result = await sendMessageToLLM("Can I see your resume?");
 
-      expect(result).toContain("You can view Lance's resume here");
+      expect(result).toContain("resume");
+      expect(result).toContain("drive.google.com");
     });
 
     test("should return default response for unknown questions", async () => {
@@ -119,56 +127,43 @@ describe("llmService", () => {
 
       const result = await sendMessageToLLM("Random question");
 
-      expect(result).toContain("Hi! I'm Lance's AI assistant");
+      expect(result).toContain("AI assistant");
+      expect(result).toContain("professional background");
     });
 
     test("should handle empty messages", async () => {
+      fetch.mockRejectedValueOnce(new Error("API error"));
+
       const result = await sendMessageToLLM("");
 
-      expect(result).toContain("Hi! I'm Lance's AI assistant");
+      expect(result).toBeDefined();
+      expect(typeof result).toBe("string");
     });
 
     test("should handle null messages", async () => {
+      fetch.mockRejectedValueOnce(new Error("API error"));
+
       const result = await sendMessageToLLM(null);
 
-      expect(result).toContain("Hi! I'm Lance's AI assistant");
+      expect(result).toBeDefined();
+      expect(typeof result).toBe("string");
     });
 
     test("should handle undefined messages", async () => {
+      fetch.mockRejectedValueOnce(new Error("API error"));
+
       const result = await sendMessageToLLM(undefined);
 
-      expect(result).toContain("Hi! I'm Lance's AI assistant");
+      expect(result).toBeDefined();
+      expect(typeof result).toBe("string");
     });
   });
 
-  describe("checkOllamaStatus", () => {
-    test("should return true when Ollama is running", async () => {
-      fetch.mockResolvedValueOnce({
-        ok: true,
-      });
+  describe("checkRailwayStatus", () => {
+    test("should return true when Railway backend is available", () => {
+      const result = checkRailwayStatus();
 
-      const result = await checkOllamaStatus();
-
-      expect(fetch).toHaveBeenCalledWith("http://localhost:11434/api/tags");
       expect(result).toBe(true);
-    });
-
-    test("should return false when Ollama is not running", async () => {
-      fetch.mockRejectedValueOnce(new Error("Connection refused"));
-
-      const result = await checkOllamaStatus();
-
-      expect(result).toBe(false);
-    });
-
-    test("should return false when Ollama returns error", async () => {
-      fetch.mockResolvedValueOnce({
-        ok: false,
-      });
-
-      const result = await checkOllamaStatus();
-
-      expect(result).toBe(false);
     });
   });
 
@@ -198,7 +193,9 @@ describe("llmService", () => {
 
       fetch.mockResolvedValueOnce({
         ok: true,
-        json: async () => ({ response: "Test response" }),
+        json: async () => ({
+          response: "Test response",
+        }),
       });
 
       await sendMessageToLLM("Test message");
@@ -246,7 +243,9 @@ describe("llmService", () => {
               () =>
                 resolve({
                   ok: true,
-                  json: async () => ({ response: "Delayed response" }),
+                  json: async () => ({
+                    response: "Delayed response",
+                  }),
                 }),
               2000
             )

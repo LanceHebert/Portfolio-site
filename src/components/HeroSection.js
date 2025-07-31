@@ -2,7 +2,7 @@ import { Parallax } from "react-parallax";
 import SynthBG from "../images/japansynth.jpeg";
 import React from "react";
 
-const ImageOne = React.memo(() => (
+const HeroSection = React.memo(() => (
   <Parallax className="image" bgImage={SynthBG} strength={800}>
     <div className="content" id="home">
       <p>
@@ -22,4 +22,4 @@ const ImageOne = React.memo(() => (
   </Parallax>
 ));
 
-export default ImageOne;
+export default HeroSection;

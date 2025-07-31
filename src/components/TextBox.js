@@ -99,31 +99,25 @@ const TextBox = React.memo(() => {
 
             <p className="AboutText">
               <ScrollAnimation className="fade-in-left">
-                Hey there, I'm a physical therapist turned software developer
-                residing in Washington State.
+                Hi, I'm Lance Hebert. The "Pandemic Pivot" took me from
+                practicing physical therapy to 3+ years as a full-time software
+                engineer on-staff at a fast-paced digital marketing agency. I build accessible,
+                high-performance Rails & React apps—raising Lighthouse scores
+                from the 40s into the 90s, shaving 40 points off PageSpeed
+                Insights, and mentoring junior devs on WCAG 2.1 AA and
+                headless-CMS best practices.
               </ScrollAnimation>
               <br />
               <br />
               <ScrollAnimation className="fade-in-left">
-                The "Pandemic Pivot" allowed me to reassess my career choice and
-                start pursuing something I am passionate about. I am excited to
-                integrate my leadership background in healthcare with the
-                knowledge I have gained in Ruby on Rails and JavaScript React
-                based programming.
+                My healthcare background sharpened my leadership, empathy, and
+                attention to detail—skills I apply daily to write clean code and
+                deliver meaningful user experiences. Off-hours you'll find me on
+                the ice playing hockey, experimenting with AI/Web3/AR projects,
+                or leveling up in PC games.
               </ScrollAnimation>
             </p>
 
-            <br />
-            <br />
-            <br />
-            <br />
-            <ScrollAnimation className="fade-in-left">
-              <span className="interests-label">Interests include:</span>{" "}
-              <li>Web3/cryptocurrencies/blockchain</li> <li>Health hacking</li>
-              <li>Augmented reality</li>
-            </ScrollAnimation>
-            <br />
-            <br />
             <div className="SocialsBox column">
               <hr />
               <div>

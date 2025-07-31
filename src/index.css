@@ -104,7 +104,7 @@ hr {
 .AboutImg {
   position: relative;
   padding-top: 0;
-  margin-top: -65vh;
+  /* margin-top: -65vh; */
   /* min-height: 50%; */
   display: flex;
   flex-direction: column;
@@ -114,22 +114,14 @@ hr {
 }
 
 /* Responsive adjustments for different screen sizes */
-@media (min-width: 769px) {
+@media (min-width: 692px) {
   .AboutImg {
     margin-top: -100vh;
   }
 }
 
-@media (max-width: 768px) {
-  .AboutImg {
-    margin-top: -50vh;
-  }
-}
-
-@media (max-width: 649px) {
-  .AboutImg {
-    margin-top: -10vh;
-  }
+@media (max-width: 670px) {
+  
 }
 
 .AboutTitle {
@@ -141,6 +133,7 @@ hr {
   margin: 0;
 }
 .AboutText {
+  min-width: 250px;
   margin: auto;
   text-align: left;
   font-size: 1.8vh;
@@ -151,6 +144,17 @@ hr {
   /* background: rgba(128, 128, 128, 0.031); */
   /* text-shadow: .5px 0px #ffdf6b; */
   /* padding: 0% 15%; */
+}
+
+/* Bullet point styling for About Me section */
+.AboutText .fade-in-left {
+  text-align: left;
+  margin-left: 20px;
+}
+
+.AboutText .bullet-point {
+  font-weight: bold;
+  margin-left: 40px;
 }
 
 .SocialsBox {

@@ -220,7 +220,7 @@ describe("AIChatbot Component", () => {
     // Wait for error handling
     await waitFor(() => {
       expect(
-        screen.getByText(/I'm sorry, I'm having trouble/)
+        screen.getByText(/Sorry, I'm having trouble connecting/)
       ).toBeInTheDocument();
     });
   });
@@ -294,7 +294,7 @@ describe("AIChatbot Component", () => {
     fireEvent.click(chatFab);
 
     const input = screen.getByTestId("chat-input");
-    const sendButton = screen.getByTestId("send-button");
+    const sendButton = getSendButton();
 
     // Send first message
     fireEvent.change(input, { target: { value: "First message" } });
@@ -329,7 +329,7 @@ describe("AIChatbot Component", () => {
     fireEvent.click(chatFab);
 
     const input = screen.getByTestId("chat-input");
-    const sendButton = screen.getByTestId("send-button");
+    const sendButton = getSendButton();
 
     // Send message with special characters
     const specialMessage = "Hello! How are you? 😊 @#$%^&*()";
@@ -355,7 +355,7 @@ describe("AIChatbot Component", () => {
     fireEvent.click(chatFab);
 
     const input = screen.getByTestId("chat-input");
-    const sendButton = screen.getByTestId("send-button");
+    const sendButton = getSendButton();
 
     // Send a message
     fireEvent.change(input, { target: { value: "Test" } });

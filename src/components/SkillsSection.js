@@ -3,7 +3,7 @@ import StarSynth from "../images/starssynth.jpeg";
 import React from "react";
 import ScrollAnimation from "./ScrollAnimation";
 
-const ImageThree = React.memo(() => (
+const SkillsSection = React.memo(() => (
   <Parallax className="image" bgImage={StarSynth} strength={800}>
     <div className="AboutTitle section-header" id="skills">
       <span className="img-txt">Technical Skills</span>
@@ -95,4 +95,4 @@ const ImageThree = React.memo(() => (
   </Parallax>
 ));
 
-export default ImageThree;
+export default SkillsSection;

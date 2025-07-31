@@ -1,16 +1,9 @@
-// LLM Service - Supports multiple providers
-const LLM_PROVIDER = "railway"; // Options: 'groq', 'ollama', 'railway', 'simulated'
-
-// Groq API Configuration (Free tier: 100 requests/day)
-const GROQ_API_KEY = process.env.REACT_APP_GROQ_API_KEY;
-const GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions";
+// LLM Service - Railway Backend with OpenAI integration
+const LLM_PROVIDER = "railway"; // Options: 'railway', 'simulated'
 
 // Railway Backend Configuration (Deployed)
 const RAILWAY_API_URL =
   "https://portfolio-ai-backend-production-1fa0.up.railway.app";
-
-// Ollama Configuration (Local)
-const OLLAMA_API_URL = "http://localhost:11434/api/generate";
 
 // Lance's base context for the AI with built-in resume information
 const BASE_CONTEXT = `You are Lance Hebert's AI assistant. You help visitors learn about Lance's professional background, skills, and projects.
@@ -98,39 +91,7 @@ const SIMULATED_RESPONSES = {
     "Hi! I'm Lance's AI assistant. I can help you learn about his professional background! You can ask me about:\n\n- Experience & Work History\n- Technical Skills & Technologies\n- Projects & Portfolio\n- Contact Information & Social Links\n- Education & Background\n- Interests & Passions\n- Resume & CV\n\nWhat would you like to know about Lance?",
 };
 
-// Send message to Groq API
-async function sendToGroq(message) {
-  try {
-    const response = await fetch(GROQ_API_URL, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${GROQ_API_KEY}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        model: "llama3-8b-8192",
-        messages: [
-          { role: "system", content: getFullContext() },
-          { role: "user", content: message },
-        ],
-        max_tokens: 500,
-        temperature: 0.7,
-      }),
-    });
-
-    if (!response.ok) {
-      throw new Error(`Groq API error: ${response.status}`);
-    }
-
-    const data = await response.json();
-    return data.choices[0].message.content;
-  } catch (error) {
-    console.error("Groq API error:", error);
-    throw error;
-  }
-}
-
-// Send message to Railway Backend API
+// Send message to Railway Backend (which handles OpenAI)
 async function sendToRailway(message) {
   try {
     const response = await fetch(`${RAILWAY_API_URL}/api/chat`, {
@@ -148,36 +109,15 @@ async function sendToRailway(message) {
     }
 
     const data = await response.json();
+
+    // Check if response has the expected field
+    if (!data || !data.response) {
+      throw new Error("Invalid response format from Railway API");
+    }
+
     return data.response;
   } catch (error) {
     console.error("Railway API error:", error);
-    throw error;
-  }
-}
-
-// Send message to Ollama (local)
-async function sendToOllama(message) {
-  try {
-    const response = await fetch(OLLAMA_API_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        model: "llama2",
-        prompt: `${getFullContext()}\n\nUser: ${message}\nAssistant:`,
-        stream: false,
-      }),
-    });
-
-    if (!response.ok) {
-      throw new Error(`Ollama API error: ${response.status}`);
-    }
-
-    const data = await response.json();
-    return data.response;
-  } catch (error) {
-    console.error("Ollama API error:", error);
     throw error;
   }
 }
@@ -229,21 +169,8 @@ export async function sendMessageToLLM(message) {
 
   try {
     switch (LLM_PROVIDER) {
-      case "groq":
-        if (GROQ_API_KEY) {
-          return await sendToGroq(message);
-        } else {
-          console.warn(
-            "Groq API key not found, falling back to simulated responses"
-          );
-          return getSimulatedResponse(message);
-        }
-
       case "railway":
         return await sendToRailway(message);
-
-      case "ollama":
-        return await sendToOllama(message);
 
       case "simulated":
       default:
@@ -255,12 +182,7 @@ export async function sendMessageToLLM(message) {
   }
 }
 
-// Check if Ollama is running
-export async function checkOllamaStatus() {
-  try {
-    const response = await fetch("http://localhost:11434/api/tags");
-    return response.ok;
-  } catch {
-    return false;
-  }
+// Check if Railway backend is available
+export function checkRailwayStatus() {
+  return true; // Railway backend is always available
 }
