@@ -4,6 +4,7 @@ const ScrollAnimation = ({ children, className = "", threshold = 0.1 }) => {
   const elementRef = useRef(null);
 
   useEffect(() => {
+    const element = elementRef.current;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -18,13 +19,13 @@ const ScrollAnimation = ({ children, className = "", threshold = 0.1 }) => {
       }
     );
 
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
+    if (element) {
+      observer.observe(element);
     }
 
     return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current);
+      if (element) {
+        observer.unobserve(element);
       }
     };
   }, [threshold]);

@@ -24,9 +24,16 @@
       content="camera=(), microphone=(), geolocation=()"
     />
 
+    <!-- Preload critical resources -->
+    <link rel="preload" href="%PUBLIC_URL%/fonts/Streamster.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://kit.fontawesome.com">
+
     <script
       src="https://kit.fontawesome.com/315d18deb6.js"
       crossorigin="anonymous"
+      defer
     ></script>
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
 
@@ -36,6 +43,8 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Fondamento&family=Libre+Baskerville&family=Neonderthaw&family=Offside&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
 
     <!--

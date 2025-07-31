@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import {
   Box,
   Paper,
@@ -34,17 +34,26 @@ const AIChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const messagesEndRef = useRef(null);
 
-  const scrollToBottom = () => {
+  const scrollToBottom = useCallback(() => {
     if (messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: "auto" });
     }
-  };
+  }, []);
 
   useEffect(() => {
     scrollToBottom();
-  }, [messages]);
+  }, [messages, scrollToBottom]);
 
-  const handleSendMessage = async () => {
+  const handleAIResponse = useCallback(async (message) => {
+    try {
+      return await sendMessageToLLM(message);
+    } catch (error) {
+      console.error("Error getting AI response:", error);
+      return "Sorry, I'm having trouble connecting right now. Please try again later.";
+    }
+  }, []);
+
+  const handleSendMessage = useCallback(async () => {
     if (!inputMessage.trim()) return;
 
     const userMessage = {
@@ -81,23 +90,31 @@ const AIChatbot = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [inputMessage, handleAIResponse]);
 
-  const handleAIResponse = async (message) => {
-    try {
-      return await sendMessageToLLM(message);
-    } catch (error) {
-      console.error("Error getting AI response:", error);
-      return "Sorry, I'm having trouble connecting right now. Please try again later.";
-    }
-  };
-
-  const handleKeyPress = (e) => {
+  const handleKeyPress = useCallback((e) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       handleSendMessage();
     }
-  };
+  }, [handleSendMessage]);
+
+  const handleOpenChat = useCallback(() => {
+    setIsOpen(true);
+  }, []);
+
+  const handleCloseChat = useCallback(() => {
+    setIsOpen(false);
+  }, []);
+
+  const handleInputChange = useCallback((e) => {
+    setInputMessage(e.target.value);
+  }, []);
+
+  // Memoize the send button disabled state
+  const isSendDisabled = useMemo(() => {
+    return !inputMessage.trim() || isLoading;
+  }, [inputMessage, isLoading]);
 
   return (
     <>
@@ -111,7 +128,7 @@ const AIChatbot = () => {
       {/* Floating Action Button */}
       <Fab
         aria-label="chat"
-        onClick={() => setIsOpen(true)}
+        onClick={handleOpenChat}
         sx={{
           position: "fixed",
           bottom: 16,
@@ -133,7 +150,7 @@ const AIChatbot = () => {
       {/* Chat Dialog */}
       <Dialog
         open={isOpen}
-        onClose={() => setIsOpen(false)}
+        onClose={handleCloseChat}
         maxWidth="sm"
         fullWidth
         PaperProps={{
@@ -166,7 +183,7 @@ const AIChatbot = () => {
             />
             <Typography variant="h6">Lance's AI Assistant</Typography>
           </Box>
-          <IconButton onClick={() => setIsOpen(false)} sx={{ color: "white" }}>
+          <IconButton onClick={handleCloseChat} sx={{ color: "white" }}>
             <CloseIcon />
           </IconButton>
         </DialogTitle>
@@ -266,7 +283,7 @@ const AIChatbot = () => {
                 multiline
                 maxRows={3}
                 value={inputMessage}
-                onChange={(e) => setInputMessage(e.target.value)}
+                onChange={handleInputChange}
                 onKeyPress={handleKeyPress}
                 placeholder="Ask me about Lance's skills, experience, or projects..."
                 variant="outlined"
@@ -298,7 +315,7 @@ const AIChatbot = () => {
               />
               <IconButton
                 onClick={handleSendMessage}
-                disabled={!inputMessage.trim() || isLoading}
+                disabled={isSendDisabled}
                 className="chatbot-send-button"
               >
                 <SendIcon />
