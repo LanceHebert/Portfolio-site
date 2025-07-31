@@ -24,7 +24,7 @@ const AIChatbot = () => {
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: "Hi! I'm Lance's AI assistant. I can help you learn about his skills, experience, and projects. What would you like to know?",
+      text: "Hi! I'm ChadGPT, Lance's AI assistant. I can help you learn about his skills, experience, and projects. What would you like to know?",
       sender: "bot",
       timestamp: new Date(),
     },
