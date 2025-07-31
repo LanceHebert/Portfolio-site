@@ -1024,48 +1024,61 @@ a.projectLinkText {
 
 /* Animation classes to replace react-reveal */
 .fade-in-left {
-  animation: fadeInLeft 1s ease-in-out;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.fade-in-left.animate {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .fade-in {
-  animation: fadeIn 1s ease-in-out;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.fade-in.animate {
+  opacity: 1;
 }
 
 .bounce-in-left {
-  animation: bounceInLeft 1s ease-in-out;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
 }
 
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.bounce-in-left.animate {
+  opacity: 1;
+  transform: translateX(0);
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+/* Ensure proper layout for animated elements */
+.fade-in-left,
+.fade-in,
+.bounce-in-left {
+  display: block;
+  width: 100%;
 }
 
-@keyframes bounceInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-  60% {
-    opacity: 1;
-    transform: translateX(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+/* Fix layout issues with profile images */
+.pfpRow .fade-in-left {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ensure boxes maintain their layout */
+.box {
+  position: relative;
+}
+
+/* Fix social icons layout */
+.AboutIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }

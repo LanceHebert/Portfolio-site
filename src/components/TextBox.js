@@ -1,5 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ScrollAnimation from "./ScrollAnimation";
 
 import {
   faLinkedin,
@@ -56,7 +57,7 @@ const TextBox = React.memo(() => {
         <div className="AboutBox row ">
           <div className="AboutImg column">
             <div className="row pfpRow">
-              <div className="fade-in-left">
+              <ScrollAnimation className="fade-in-left">
                 <img
                   className="pfp layer"
                   src="../images/synthy2.png"
@@ -77,10 +78,10 @@ const TextBox = React.memo(() => {
                   src="../images/blackbg.png"
                   alt="Profile layer 4"
                 />
-              </div>
+              </ScrollAnimation>
             </div>
             <div className="row">
-              <div className="fade-in-left">
+              <ScrollAnimation className="fade-in-left">
                 <a
                   href="https://drive.google.com/file/d/1smgOzGR_0CeN1sRE9huGfoDObgwz7vlm/view?usp=sharing"
                   target="_blank"
@@ -88,62 +89,62 @@ const TextBox = React.memo(() => {
                 >
                   <button className="GlowButton">Resume</button>
                 </a>
-              </div>
+              </ScrollAnimation>
             </div>
           </div>
           <div className="AboutText  column">
-            <div className="fade-in-left">
+            <ScrollAnimation className="fade-in-left">
               <h3 className="AboutTitle">About Me</h3>
-            </div>
+            </ScrollAnimation>
 
             <p className="AboutText">
-              <div className="fade-in-left">
+              <ScrollAnimation className="fade-in-left">
                 Hey there, I'm a physical therapist turned software developer
                 residing in Washington State.
-              </div>
+              </ScrollAnimation>
               <br />
               <br />
-              <div className="fade-in-left">
+              <ScrollAnimation className="fade-in-left">
                 The "Pandemic Pivot" allowed me to reassess my career choice and
                 start pursuing something I am passionate about. I am excited to
                 integrate my leadership background in healthcare with the
                 knowledge I have gained in Ruby on Rails and JavaScript React
                 based programming.
-              </div>
+              </ScrollAnimation>
             </p>
 
             <br />
             <br />
             <br />
             <br />
-            <div className="fade-in-left">
+            <ScrollAnimation className="fade-in-left">
               <span style={{ fontWeight: "500" }}>Interests include:</span>{" "}
               <li>Web3/cryptocurrencies/blockchain</li> <li>Health hacking</li>
               <li>Augmented reality</li>
-            </div>
+            </ScrollAnimation>
             <br />
             <br />
             <div className="SocialsBox column">
               <hr />
               <div>
-                <div className="fade-in">
+                <ScrollAnimation className="fade-in">
                   <div>
                     <h2 className="AboutTitle">Socials</h2>
                   </div>
-                </div>
+                </ScrollAnimation>
                 {/* <div row>
                     <button className="GlowButton">Resume</button>
                     
                     
                   </div> */}
-                <div className="fade-in">
+                <ScrollAnimation className="fade-in">
                   <div className="row AboutIcon">
                     {linkedin}
                     {github}
                     {medium}
                     {youtube}
                   </div>
-                </div>
+                </ScrollAnimation>
               </div>
             </div>
           </div>

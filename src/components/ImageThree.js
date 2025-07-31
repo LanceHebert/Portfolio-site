@@ -1,6 +1,7 @@
 import { Parallax } from "react-parallax";
 import StarSynth from "../images/starssynth.jpeg";
 import React from "react";
+import ScrollAnimation from "./ScrollAnimation";
 
 const ImageThree = React.memo(() => (
   <Parallax className="image" bgImage={StarSynth} strength={800}>
@@ -13,7 +14,7 @@ const ImageThree = React.memo(() => (
     </div>
 
     <div className="row1-container">
-      <div className="fade-in">
+      <ScrollAnimation className="fade-in">
         <div className="box box-down cyan">
           <h2 className="cardTitle">Languages</h2>
           <p className="cardText">Ruby,Javascript</p>
@@ -28,8 +29,8 @@ const ImageThree = React.memo(() => (
             alt=""
           />
         </div>
-      </div>
-      <div className="fade-in">
+      </ScrollAnimation>
+      <ScrollAnimation className="fade-in">
         <div className="box red">
           <h2 className="cardTitle">Frameworks</h2>
           <p className="cardText">Bootstrap,Rails,React,HTML5</p>
@@ -54,8 +55,8 @@ const ImageThree = React.memo(() => (
             alt=""
           />
         </div>
-      </div>
-      <div className="fade-in">
+      </ScrollAnimation>
+      <ScrollAnimation className="fade-in">
         <div className="box box-down blue">
           <h2 className="cardTitle">Database Management</h2>
           <p className="cardText">PostgreSQL,SQLite</p>
@@ -70,9 +71,9 @@ const ImageThree = React.memo(() => (
             alt=""
           />
         </div>
-      </div>
+      </ScrollAnimation>
     </div>
-    <div className="fade-in">
+    <ScrollAnimation className="fade-in">
       <div className="row2-container">
         <div className="box orange">
           <h2 className="cardTitle">Testing & Workflow</h2>
@@ -89,7 +90,7 @@ const ImageThree = React.memo(() => (
           />
         </div>
       </div>
-    </div>
+    </ScrollAnimation>
     <footer>
       <p className="attribution">Design inspired by Jared Parsons.</p>
     </footer>

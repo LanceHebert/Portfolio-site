@@ -1,6 +1,7 @@
 import { Parallax } from "react-parallax";
 import SynthHD from "../images/synthHD.jpeg";
 import React from "react";
+import ScrollAnimation from "./ScrollAnimation";
 
 const ImageTwo = React.memo(() => (
   <Parallax className="image" bgImage={SynthHD} strength={800}>
@@ -10,7 +11,7 @@ const ImageTwo = React.memo(() => (
       <span className="img-txt AboutTitle" id="projects">
         Projects
       </span>
-      <div className="bounce-in-left">
+      <ScrollAnimation className="bounce-in-left">
         <div className="projectContainer shrink ">
           <div className="card ">
             <div className="face face1">
@@ -145,7 +146,7 @@ const ImageTwo = React.memo(() => (
             </div>
           </div>
         </div>
-      </div>
+      </ScrollAnimation>
     </div>
   </Parallax>
 ));
