@@ -69,7 +69,15 @@ const ResponsiveAppBar = React.memo(() => {
                     to={page}
                     spy={true}
                     smooth={true}
-                    offset={0}
+                    offset={
+                      page === "resume"
+                        ? -175
+                        : page === "skills"
+                        ? -75
+                        : page === "projects"
+                        ? -150
+                        : 0
+                    }
                     duration={500}
                   >
                     <Typography textAlign="center">{page}</Typography>
@@ -91,7 +99,15 @@ const ResponsiveAppBar = React.memo(() => {
                   to={page}
                   spy={true}
                   smooth={true}
-                  offset={0}
+                  offset={
+                    page === "resume"
+                      ? -175
+                      : page === "skills"
+                      ? -75
+                      : page === "projects"
+                      ? -150
+                      : 0
+                  }
                   duration={500}
                 >
                   {page}

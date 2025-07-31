@@ -1256,6 +1256,26 @@ a.projectLinkText {
   background: rgba(0,0,0,.9) !important;
 }
 
+/* Navigation text styling - same font and glow as Software Engineer */
+.app-bar-custom .MuiTypography-root,
+.app-bar-custom .MuiButton-root,
+.app-bar-custom a {
+  font-family: Streamster !important;
+  color: #fff !important;
+  text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #fff, 0 0 80px #fff;
+  text-transform: capitalize;
+  font-weight: normal;
+  letter-spacing: 1px;
+  font-size: 1.6rem !important;
+}
+
+.app-bar-custom .MuiButton-root:hover,
+.app-bar-custom .MuiTypography-root:hover,
+.app-bar-custom a:hover {
+  color: #ffdf6b !important;
+  text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #ffdf6b, 0 0 80px #ffdf6b, 0 0 90px #ffdf6b;
+}
+
 /* AIChatbot component - icon styles */
 .chatbot-icon {
   width: 24px;
