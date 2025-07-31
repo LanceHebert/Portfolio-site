@@ -1,9 +1,13 @@
 // LLM Service - Supports multiple providers
-const LLM_PROVIDER = "ollama"; // Options: 'groq', 'ollama', 'simulated'
+const LLM_PROVIDER = "railway"; // Options: 'groq', 'ollama', 'railway', 'simulated'
 
 // Groq API Configuration (Free tier: 100 requests/day)
 const GROQ_API_KEY = process.env.REACT_APP_GROQ_API_KEY;
 const GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions";
+
+// Railway Backend Configuration (Deployed)
+const RAILWAY_API_URL =
+  "https://portfolio-ai-backend-production-1fa0.up.railway.app";
 
 // Ollama Configuration (Local)
 const OLLAMA_API_URL = "http://localhost:11434/api/generate";
@@ -126,6 +130,31 @@ async function sendToGroq(message) {
   }
 }
 
+// Send message to Railway Backend API
+async function sendToRailway(message) {
+  try {
+    const response = await fetch(`${RAILWAY_API_URL}/api/chat`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        message: message,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Railway API error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data.response;
+  } catch (error) {
+    console.error("Railway API error:", error);
+    throw error;
+  }
+}
+
 // Send message to Ollama (local)
 async function sendToOllama(message) {
   try {
@@ -204,6 +233,9 @@ export async function sendMessageToLLM(message) {
           );
           return getSimulatedResponse(message);
         }
+
+      case "railway":
+        return await sendToRailway(message);
 
       case "ollama":
         return await sendToOllama(message);
