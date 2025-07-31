@@ -5,9 +5,7 @@ import ScrollAnimation from "./ScrollAnimation";
 
 const ImageTwo = React.memo(() => (
   <Parallax className="image" bgImage={SynthHD} strength={800}>
-    <div
-      style={{ textAlign: "center", paddingTop: "60px", paddingBottom: "60px" }}
-    >
+    <div className="section-header">
       <span className="img-txt AboutTitle" id="projects">
         Projects
       </span>

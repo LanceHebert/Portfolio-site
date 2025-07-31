@@ -5,11 +5,7 @@ import ScrollAnimation from "./ScrollAnimation";
 
 const ImageThree = React.memo(() => (
   <Parallax className="image" bgImage={StarSynth} strength={800}>
-    <div
-      className="AboutTitle"
-      id="skills"
-      style={{ textAlign: "center", paddingTop: "60px", paddingBottom: "60px" }}
-    >
+    <div className="AboutTitle section-header" id="skills">
       <span className="img-txt">Technical Skills</span>
     </div>
 

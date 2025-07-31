@@ -25,7 +25,7 @@ const ResponsiveAppBar = React.memo(() => {
   };
 
   return (
-    <AppBar style={{ background: "rgba(0,0,0,.9)" }}>
+    <AppBar className="app-bar-custom">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>

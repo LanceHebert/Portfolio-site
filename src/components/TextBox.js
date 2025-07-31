@@ -118,7 +118,7 @@ const TextBox = React.memo(() => {
             <br />
             <br />
             <ScrollAnimation className="fade-in-left">
-              <span style={{ fontWeight: "500" }}>Interests include:</span>{" "}
+              <span className="interests-label">Interests include:</span>{" "}
               <li>Web3/cryptocurrencies/blockchain</li> <li>Health hacking</li>
               <li>Augmented reality</li>
             </ScrollAnimation>

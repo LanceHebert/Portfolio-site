@@ -162,11 +162,7 @@ const AIChatbot = () => {
             <img
               src="/favicon.ico"
               alt="Lance's Icon"
-              style={{
-                width: 24,
-                height: 24,
-                filter: "drop-shadow(0 0 5px #00ffff)",
-              }}
+              className="chatbot-icon"
             />
             <Typography variant="h6">Lance's AI Assistant</Typography>
           </Box>
@@ -175,86 +171,28 @@ const AIChatbot = () => {
           </IconButton>
         </DialogTitle>
 
-        <DialogContent sx={{ p: 0, display: "flex", flexDirection: "column" }}>
+        <DialogContent className="chatbot-dialog-content">
           {/* Messages Area */}
-          <Box
-            sx={{
-              flex: 1,
-              overflow: "auto",
-              p: 2,
-              background: "#000000",
-              border: "1px solid #00ffff",
-            }}
-          >
+          <Box className="chatbot-messages-area">
             {messages.map((message) => (
               <Box
                 key={message.id}
-                sx={{
-                  display: "flex",
-                  justifyContent:
-                    message.sender === "user" ? "flex-end" : "flex-start",
-                  mb: 2,
-                }}
+                className={`chatbot-message-container ${message.sender}`}
               >
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "flex-start",
-                    gap: 1,
-                    maxWidth: "80%",
-                  }}
-                >
+                <Box className="chatbot-message-wrapper">
                   {message.sender === "bot" && (
-                    <Avatar
-                      sx={{
-                        bgcolor: "#00ffff",
-                        width: 32,
-                        height: 32,
-                        boxShadow: "0 0 10px #00ffff",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
+                    <Avatar className="chatbot-avatar">
                       <img
                         src="/favicon.ico"
                         alt="Lance's Icon"
-                        style={{
-                          width: 20,
-                          height: 20,
-                          filter: "drop-shadow(0 0 3px #00ffff)",
-                        }}
+                        className="chatbot-avatar-icon"
                       />
                     </Avatar>
                   )}
-                  <Paper
-                    sx={{
-                      p: 2,
-                      backgroundColor:
-                        message.sender === "user"
-                          ? "rgba(0, 255, 255, 0.2)"
-                          : "rgba(255, 255, 255, 0.1)",
-                      color: message.sender === "user" ? "#ffffff" : "#00ffff",
-                      borderRadius: 2,
-                      boxShadow:
-                        message.sender === "user"
-                          ? "0 0 10px rgba(0, 255, 255, 0.5)"
-                          : "0 0 10px rgba(0, 255, 255, 0.5)",
-                      border:
-                        message.sender === "user"
-                          ? "1px solid #00ffff"
-                          : "1px solid #00ffff",
-                    }}
-                  >
+                  <Paper className={`chatbot-message-paper ${message.sender}`}>
                     <Typography
                       variant="body2"
-                      sx={{
-                        whiteSpace: "pre-line",
-                        textShadow:
-                          message.sender === "user"
-                            ? "0 0 2px #ffffff"
-                            : "0 0 2px #00ffff",
-                      }}
+                      className={`chatbot-message-text ${message.sender}`}
                     >
                       {message.text}
                     </Typography>
@@ -303,15 +241,7 @@ const AIChatbot = () => {
                       }}
                     />
                   </Avatar>
-                  <Paper
-                    sx={{
-                      p: 2,
-                      borderRadius: 2,
-                      backgroundColor: "rgba(255, 255, 255, 0.1)",
-                      border: "1px solid #00ffff",
-                      boxShadow: "0 0 15px rgba(0, 255, 255, 0.5)",
-                    }}
-                  >
+                  <Paper className="chatbot-loading-paper">
                     <CircularProgress
                       size={20}
                       sx={{
@@ -329,14 +259,8 @@ const AIChatbot = () => {
           </Box>
 
           {/* Input Area */}
-          <Box
-            sx={{
-              p: 2,
-              borderTop: "1px solid #00ffff",
-              background: "#000000",
-            }}
-          >
-            <Box sx={{ display: "flex", gap: 1 }}>
+          <Box className="chatbot-input-area">
+            <Box className="chatbot-input-wrapper">
               <TextField
                 fullWidth
                 multiline
@@ -375,20 +299,7 @@ const AIChatbot = () => {
               <IconButton
                 onClick={handleSendMessage}
                 disabled={!inputMessage.trim() || isLoading}
-                sx={{
-                  alignSelf: "flex-end",
-                  backgroundColor: "#00ffff",
-                  color: "#000000",
-                  boxShadow: "0 0 15px #00ffff",
-                  "&:hover": {
-                    backgroundColor: "#33ffff",
-                    boxShadow: "0 0 20px #33ffff",
-                  },
-                  "&:disabled": {
-                    backgroundColor: "rgba(0, 255, 255, 0.3)",
-                    boxShadow: "none",
-                  },
-                }}
+                className="chatbot-send-button"
               >
                 <SendIcon />
               </IconButton>

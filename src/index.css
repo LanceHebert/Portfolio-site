@@ -98,11 +98,33 @@ hr {
 }
 .AboutImg {
   position: relative;
-  padding-top: 10%;
+  padding-top: 0;
+  margin-top: -65vh;
   /* min-height: 50%; */
-  /* justify-content: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   min-width: 400px;
+}
+
+/* Responsive adjustments for different screen sizes */
+@media (min-width: 769px) {
+  .AboutImg {
+    margin-top: -100vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .AboutImg {
+    margin-top: -50vh;
+  }
+}
+
+@media (max-width: 649px) {
+  .AboutImg {
+    margin-top: -10vh;
+  }
 }
 
 .AboutTitle {
@@ -117,6 +139,9 @@ hr {
   margin: auto;
   text-align: left;
   font-size: 1.8vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   /* max-height: 300px; */
   /* background: rgba(128, 128, 128, 0.031); */
   /* text-shadow: .5px 0px #ffdf6b; */
@@ -485,7 +510,10 @@ hr {
 }
 .pfpRow{
   min-height: 25vh;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 /* Technical Skills  */
 /* ****************************************************** */
@@ -519,14 +547,20 @@ hr {
   .box.box {
     height: 25vw;
     padding-top:10px;
+    margin: 10px;
+  }
+  
+  .AboutTitle {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
 }
 .cardText.cardText{
-  font-size:3vw;
+  font-size: 0.7rem;
 }
 .skillIcon.skillIcon{
   float: right;
   width: 30px;
-}
 }
 
 .box p {
@@ -552,11 +586,32 @@ hr {
   }
 } */
 
-@media (max-width: 950px) and (min-width: 450px) {
+@media (max-width: 949px) and (min-width: 450px) {
+  .row1-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+  }
+  
+  .row2-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 10px 25px;
+  }
+  
   .box {
       text-align: center;
-      height: 140px;
-      width:90%
+      height: 120px;
+      padding: 15px;
+      margin: 10px 25px;
+      overflow: visible;
+  }
+  .box.orange{
+    width: 100%;
   }
   .cardText.cardText{
     font-size:.6rem;
@@ -564,6 +619,16 @@ hr {
   .skillIcon.skillIcon{
     float: right;
     width: 35px;
+    margin-top: -20px;
+  }
+  
+  .AboutTitle {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  
+  .row1-container .fade-in {
+    width: 100%;
   }
 }
 
@@ -601,14 +666,15 @@ hr {
       top: 150px;
   }
   .box {
-      width: 20%;
-   
+      width: 300px;
+      min-height: 250px;
+      margin: 15px;
   }
  
   
 }
 .cardText{
-  font-size:1vw;
+  font-size: 0.8rem;
 }
 .cardTitle{
   color:#fde89f;
@@ -1059,20 +1125,82 @@ a.projectLinkText {
 .fade-in,
 .bounce-in-left {
   display: block;
+  /* width: 100%; */
+}
+
+/* Ensure skills boxes maintain their structure when animated */
+.box .fade-in {
+  display: block;
   width: 100%;
+  height: 100%;
+}
+
+/* Add spacing between profile images and resume button */
+.AboutImg .row:not(.pfpRow) {
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 /* Fix layout issues with profile images */
 .pfpRow .fade-in-left {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+}
+
+/* Position resume button much lower on the page */
+.AboutImg .row:not(.pfpRow) .fade-in-left {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+/* Ensure profile images are properly contained */
+.pfpRow .fade-in-left {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+/* Make sure the profile image layers stack properly */
+.pfpRow .layer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* Ensure boxes maintain their layout */
 .box {
   position: relative;
+  overflow: hidden;
+  min-height: 200px;
+}
+
+/* Fix skill icons positioning */
+.skillIcon {
+  float: right;
+  width: 50px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure box content stays contained */
+.box h2,
+.box p {
+  position: relative;
+  z-index: 1;
 }
 
 /* Fix social icons layout */
@@ -1081,4 +1209,175 @@ a.projectLinkText {
   justify-content: center;
   align-items: center;
   gap: 20px;
+}
+
+/* Section header styling to replace inline styles */
+.section-header {
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* Responsive adjustments for section headers */
+@media (max-width: 949px) and (min-width: 450px) {
+  .section-header {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  
+  .box {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 450px) {
+  .section-header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .box {
+    min-height: auto;
+  }
+}
+
+/* Converted inline styles to CSS classes */
+
+/* TextBox component - interests text */
+.interests-label {
+  font-weight: 500;
+}
+
+/* ResponsiveAppBar component - app bar background */
+.app-bar-custom {
+  background: rgba(0,0,0,.9) !important;
+}
+
+/* AIChatbot component - icon styles */
+.chatbot-icon {
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(0 0 5px #00ffff);
+}
+
+.chatbot-avatar-icon {
+  width: 20px;
+  height: 20px;
+  filter: drop-shadow(0 0 3px #00ffff);
+}
+
+/* AIChatbot component - dialog content */
+.chatbot-dialog-content {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* AIChatbot component - messages area */
+.chatbot-messages-area {
+  flex: 1;
+  overflow: auto;
+  padding: 16px;
+  background: #000000;
+  border: 1px solid #00ffff;
+}
+
+/* AIChatbot component - message container */
+.chatbot-message-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.chatbot-message-container.bot {
+  justify-content: flex-start;
+}
+
+/* AIChatbot component - message wrapper */
+.chatbot-message-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  max-width: 80%;
+}
+
+/* AIChatbot component - avatar */
+.chatbot-avatar {
+  background-color: #00ffff;
+  width: 32px;
+  height: 32px;
+  box-shadow: 0 0 10px #00ffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* AIChatbot component - message paper */
+.chatbot-message-paper {
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  border: 1px solid #00ffff;
+}
+
+.chatbot-message-paper.user {
+  background-color: rgba(0, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.chatbot-message-paper.bot {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #00ffff;
+}
+
+/* AIChatbot component - message text */
+.chatbot-message-text {
+  white-space: pre-line;
+}
+
+.chatbot-message-text.user {
+  text-shadow: 0 0 2px #ffffff;
+}
+
+.chatbot-message-text.bot {
+  text-shadow: 0 0 2px #00ffff;
+}
+
+/* AIChatbot component - loading paper */
+.chatbot-loading-paper {
+  padding: 16px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #00ffff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+/* AIChatbot component - input area */
+.chatbot-input-area {
+  padding: 16px;
+  border-top: 1px solid #00ffff;
+  background: #000000;
+}
+
+.chatbot-input-wrapper {
+  display: flex;
+  gap: 8px;
+}
+
+/* AIChatbot component - send button */
+.chatbot-send-button {
+  align-self: flex-end;
+  background-color: #00ffff;
+  color: #000000;
+  box-shadow: 0 0 15px #00ffff;
+}
+
+.chatbot-send-button:hover {
+  background-color: #33ffff;
+  box-shadow: 0 0 20px #33ffff;
+}
+
+.chatbot-send-button:disabled {
+  background-color: rgba(0, 255, 255, 0.3);
+  box-shadow: none;
 }

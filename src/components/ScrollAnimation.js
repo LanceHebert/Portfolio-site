@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 
-const ScrollAnimation = ({ children, className = '', threshold = 0.1 }) => {
+const ScrollAnimation = ({ children, className = "", threshold = 0.1 }) => {
   const elementRef = useRef(null);
 
   useEffect(() => {
@@ -8,13 +8,13 @@ const ScrollAnimation = ({ children, className = '', threshold = 0.1 }) => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
+            entry.target.classList.add("animate");
           }
         });
       },
       {
         threshold: threshold,
-        rootMargin: '0px 0px -50px 0px'
+        rootMargin: "0px 0px -50px 0px",
       }
     );
 
@@ -36,4 +36,4 @@ const ScrollAnimation = ({ children, className = '', threshold = 0.1 }) => {
   );
 };
 
-export default ScrollAnimation; 
+export default ScrollAnimation;
