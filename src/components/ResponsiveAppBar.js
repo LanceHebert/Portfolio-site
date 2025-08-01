@@ -16,6 +16,37 @@ const pages = ["home", "resume", "skills", "projects"];
 const ResponsiveAppBar = React.memo(() => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
+  // Function to get scroll offset based on screen height
+  const getScrollOffset = (page) => {
+    const isTallMonitor = window.innerHeight >= 1000;
+
+    if (isTallMonitor) {
+      // More offset for tall monitors (scrolls down less)
+      switch (page) {
+        case "resume":
+          return -250;
+        case "skills":
+          return -150;
+        case "projects":
+          return -225;
+        default:
+          return 0;
+      }
+    } else {
+      // Standard offset for normal monitors
+      switch (page) {
+        case "resume":
+          return -175;
+        case "skills":
+          return -75;
+        case "projects":
+          return -150;
+        default:
+          return 0;
+      }
+    }
+  };
+
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -69,15 +100,7 @@ const ResponsiveAppBar = React.memo(() => {
                     to={page}
                     spy={true}
                     smooth={true}
-                    offset={
-                      page === "resume"
-                        ? -175
-                        : page === "skills"
-                        ? -75
-                        : page === "projects"
-                        ? -150
-                        : 0
-                    }
+                    offset={getScrollOffset(page)}
                     duration={500}
                   >
                     <Typography textAlign="center">{page}</Typography>
@@ -99,15 +122,7 @@ const ResponsiveAppBar = React.memo(() => {
                   to={page}
                   spy={true}
                   smooth={true}
-                  offset={
-                    page === "resume"
-                      ? -175
-                      : page === "skills"
-                      ? -75
-                      : page === "projects"
-                      ? -150
-                      : 0
-                  }
+                  offset={getScrollOffset(page)}
                   duration={500}
                 >
                   {page}

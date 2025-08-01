@@ -5,7 +5,6 @@ import ScrollAnimation from "./ScrollAnimation";
 import {
   faLinkedin,
   faGithub,
-  faYoutube,
   faMedium,
 } from "@fortawesome/free-brands-svg-icons";
 
@@ -38,16 +37,6 @@ const TextBox = React.memo(() => {
       rel="noopener noreferrer"
     >
       <FontAwesomeIcon icon={faGithub} />
-    </a>
-  );
-  const youtube = (
-    <a
-      className="AboutIcon"
-      href="https://www.youtube.com/watch?v=MnXgZ8i7UcM&list=PL-GaE70oSjOmWxBPc2xSiYvPuwALj_hsI"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <FontAwesomeIcon icon={faYoutube} />
     </a>
   );
 
@@ -101,11 +90,11 @@ const TextBox = React.memo(() => {
               <ScrollAnimation className="fade-in-left">
                 Hi, I'm Lance Hebert. The "Pandemic Pivot" took me from
                 practicing physical therapy to 3+ years as a full-time software
-                engineer on-staff at a fast-paced digital marketing agency. I build accessible,
-                high-performance Rails & React apps—raising Lighthouse scores
-                from the 40s into the 90s, shaving 40 points off PageSpeed
-                Insights, and mentoring junior devs on WCAG 2.1 AA and
-                headless-CMS best practices.
+                engineer on-staff at a fast-paced digital marketing agency. I
+                build accessible, high-performance Rails & React apps—raising
+                Lighthouse scores from the 40s into the 90s, shaving 40 points
+                off PageSpeed Insights, and mentoring junior devs on WCAG 2.1 AA
+                and headless-CMS best practices.
               </ScrollAnimation>
               <br />
               <br />
@@ -136,7 +125,6 @@ const TextBox = React.memo(() => {
                     {linkedin}
                     {github}
                     {medium}
-                    {youtube}
                   </div>
                 </ScrollAnimation>
               </div>

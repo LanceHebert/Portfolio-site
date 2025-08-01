@@ -1170,6 +1170,29 @@ a.projectLinkText {
   margin-top: 100px;
 }
 
+/* For tall monitors */
+@media (min-height: 1000px) {
+  .AboutImg .row:not(.pfpRow) .fade-in-left {
+    margin-top: 170px; /* More spacing for tall monitors */
+  }
+  
+  .AboutImg {
+    margin-top: -105vh; /* Adjusted positioning for tall monitors */
+  }
+  
+  /* Remove font-size for tall monitors */
+  .AboutText {
+    font-size: unset; /* Remove the 1.8vh font-size for tall monitors */
+  }
+  
+  /* For mobile on tall monitors */
+  @media (max-width: 670px) {
+    .AboutImg {
+      margin-top: 0; /* Remove margin-top for mobile on tall monitors */
+    }
+  }
+}
+
 /* Ensure profile images are properly contained */
 .pfpRow .fade-in-left {
   position: relative;
