@@ -11,6 +11,15 @@ const ProjectsSection = React.memo(() => {
 
   const projects = [
     {
+      name: "Giga-Speed YouTube Ad Skipper",
+      image: "../images/giga-speed-extension.png",
+      description:
+        "Chrome extension that automatically speeds up YouTube ads to 15x and provides intuitive manual speed controls with Alt key cycling.",
+      codeLink: "https://github.com/LanceHebert/Giga-Speed-ad-Skipper",
+      demoLink:
+        "https://chrome.google.com/webstore/detail/giga-speed-youtube-ad-skipper/[YOUR-EXTENSION-ID]",
+    },
+    {
       name: "Pain Point",
       image: "../images/painPoint.png",
       description:
