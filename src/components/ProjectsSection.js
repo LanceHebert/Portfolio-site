@@ -17,7 +17,7 @@ const ProjectsSection = React.memo(() => {
         "Chrome extension that automatically speeds up YouTube ads to 15x and provides intuitive manual speed controls with Alt key cycling.",
       codeLink: "https://github.com/LanceHebert/Giga-Speed-ad-Skipper",
       demoLink:
-        "https://chrome.google.com/webstore/detail/giga-speed-youtube-ad-skipper/[YOUR-EXTENSION-ID]",
+        "https://chromewebstore.google.com/detail/giga-speed-youtube-ad-ski/npdmbgbdlkhkpjoohocoeeiokdajlmjj?hl=en",
     },
     {
       name: "Pain Point",
@@ -219,7 +219,9 @@ const ProjectsSection = React.memo(() => {
                   rel="noopener noreferrer"
                   className="jukebox-link-button"
                 >
-                  Demo
+                  {currentProjectData.name.includes("Giga-Speed")
+                    ? "Link"
+                    : "Demo"}
                 </a>
               </div>
 

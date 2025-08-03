@@ -1487,6 +1487,13 @@ a.projectLinkText {
   transition: transform 0.5s ease;
 }
 
+/* Specific styling for GigaSpeed extension image to fit better */
+.jukebox-project-image[src*="giga-speed-extension"] {
+  object-fit: contain;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 .jukebox-image-container:hover .jukebox-project-image {
   transform: scale(1.1);
 }
