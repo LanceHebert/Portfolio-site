@@ -81,6 +81,10 @@ hr {
 .pfp {
   z-index: 30;
   height: 22.5vh;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.5));
   /* opacity: .85 */
 }
 .pfpbg1 {
@@ -1430,4 +1434,206 @@ a.projectLinkText {
 .chatbot-send-button:disabled {
   background-color: rgba(0, 255, 255, 0.3);
   box-shadow: none;
+}
+
+/* Jukebox Carousel Styles */
+.jukebox-carousel-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 20px;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.jukebox-image-stack {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.jukebox-image-container {
+  position: absolute;
+  width: 500px;
+  height: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+  border: 2px solid #00ffff;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.jukebox-image-container:hover {
+  box-shadow: 0 0 50px rgba(0, 255, 255, 0.6);
+  transform: scale(1.05) !important;
+}
+
+.jukebox-project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.jukebox-image-container:hover .jukebox-project-image {
+  transform: scale(1.1);
+}
+
+.jukebox-info-container {
+  text-align: center;
+  color: #ffffff;
+  max-width: 600px;
+  z-index: 15;
+  position: relative;
+  margin-top: -5px;
+}
+
+.jukebox-project-title {
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+  text-shadow: 0 0 20px #00ffff;
+}
+
+.jukebox-project-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.jukebox-link-button {
+  padding: 12px 24px;
+  background: linear-gradient(45deg, #00ffff, #0080ff);
+  color: #000000;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1rem;
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.jukebox-link-button:hover {
+  background: linear-gradient(45deg, #33ffff, #3399ff);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+  transform: translateY(-2px);
+  color: #000000;
+  text-decoration: none;
+}
+
+.jukebox-project-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #cccccc;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+}
+
+.jukebox-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+  z-index: 15;
+  position: relative;
+}
+
+.jukebox-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #00ffff;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.jukebox-indicator:hover {
+  background: rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.jukebox-indicator.active {
+  background: #00ffff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+
+/* Responsive Design for Jukebox */
+@media (max-width: 768px) {
+  .jukebox-carousel-container {
+    padding: 15px 10px;
+    min-height: 450px;
+  }
+
+  .jukebox-image-stack {
+    height: 250px;
+    max-width: 400px;
+  }
+
+  .jukebox-image-container {
+    width: 350px;
+    height: 200px;
+  }
+
+  .jukebox-project-title {
+    font-size: 2rem;
+  }
+
+  .jukebox-project-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .jukebox-link-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .jukebox-project-description {
+    font-size: 1rem;
+  }
+
+  .jukebox-nav-button {
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .jukebox-carousel-container {
+    padding: 10px 5px;
+  }
+
+  .jukebox-image-stack {
+    height: 200px;
+    max-width: 300px;
+  }
+
+  .jukebox-image-container {
+    width: 280px;
+    height: 150px;
+  }
+
+  .jukebox-project-title {
+    font-size: 1.5rem;
+  }
+
+  .jukebox-project-description {
+    font-size: 0.9rem;
+  }
 }

@@ -49,23 +49,8 @@ const TextBox = React.memo(() => {
               <ScrollAnimation className="fade-in-left">
                 <img
                   className="pfp layer"
-                  src="../images/synthy2.png"
-                  alt="Profile layer"
-                />
-                <img
-                  className="pfpbg3 layer"
-                  src="../images/synthy.png"
-                  alt="Profile layer 2"
-                />
-                <img
-                  className="layer pfpbg2"
-                  src="../images/bgpfp.png"
-                  alt="Profile layer 3"
-                />
-                <img
-                  className="layer pfpbg1"
-                  src="../images/blackbg.png"
-                  alt="Profile layer 4"
+                  src="../images/Lance-Hebert.png"
+                  alt="Lance Hebert Profile"
                 />
               </ScrollAnimation>
             </div>

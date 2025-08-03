@@ -8,7 +8,7 @@ const RAILWAY_API_URL =
 // Function to update resume content
 export function updateResumeContent(content) {
   // This function is kept for API compatibility but not used in current implementation
-  console.log("Resume content updated:", content);
+  // Removed console.log for production security
 }
 
 // Simulated responses (fallback)
