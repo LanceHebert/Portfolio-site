@@ -14,7 +14,7 @@ const ProjectsSection = React.memo(() => {
       name: "Giga-Speed YouTube Ad Skipper",
       image: "../images/giga-speed-extension.png",
       description:
-        "Chrome extension that automatically speeds up YouTube ads to 15x and provides intuitive manual speed controls with Alt key cycling.",
+        "Chrome extension that automatically speeds up YouTube ads to 15x and provides intuitive manual speed controls with Alt key cycling. ",
       codeLink: "https://github.com/LanceHebert/Giga-Speed-ad-Skipper",
       demoLink:
         "https://chromewebstore.google.com/detail/giga-speed-youtube-ad-ski/npdmbgbdlkhkpjoohocoeeiokdajlmjj?hl=en",
@@ -133,21 +133,6 @@ const ProjectsSection = React.memo(() => {
             <IconButton
               onClick={prevProject}
               className="jukebox-nav-button jukebox-nav-left"
-              sx={{
-                position: "absolute",
-                left: "20px",
-                top: "50%",
-                transform: "translateY(-50%)",
-                zIndex: 20,
-                backgroundColor: "rgba(0, 255, 255, 0.1)",
-                border: "2px solid #00ffff",
-                color: "#00ffff",
-                "&:hover": {
-                  backgroundColor: "rgba(0, 255, 255, 0.2)",
-                  boxShadow: "0 0 20px rgba(0, 255, 255, 0.5)",
-                },
-                transition: "all 0.3s ease",
-              }}
             >
               <ChevronLeft />
             </IconButton>
@@ -155,21 +140,6 @@ const ProjectsSection = React.memo(() => {
             <IconButton
               onClick={nextProject}
               className="jukebox-nav-button jukebox-nav-right"
-              sx={{
-                position: "absolute",
-                right: "20px",
-                top: "50%",
-                transform: "translateY(-50%)",
-                zIndex: 20,
-                backgroundColor: "rgba(0, 255, 255, 0.1)",
-                border: "2px solid #00ffff",
-                color: "#00ffff",
-                "&:hover": {
-                  backgroundColor: "rgba(0, 255, 255, 0.2)",
-                  boxShadow: "0 0 20px rgba(0, 255, 255, 0.5)",
-                },
-                transition: "all 0.3s ease",
-              }}
             >
               <ChevronRight />
             </IconButton>

@@ -120,7 +120,7 @@ hr {
 /* Responsive adjustments for different screen sizes */
 @media (min-width: 692px) {
   .AboutImg {
-    margin-top: -100vh;
+    margin-top: -103vh;
   }
 }
 
@@ -711,7 +711,7 @@ hr {
     flex-wrap:wrap;
     align-items: center;
     justify-content: center; 
-    top:-365px;   
+    top:-200px;   
 }
 .projectContent.projectContent.projectContent{
   /* margin-top:30px; */
@@ -1441,11 +1441,14 @@ a.projectLinkText {
   position: relative;
   max-width: 1000px;
   margin: 0 auto;
+  margin-top: 75px;
   padding: 20px 20px;
-  min-height: 500px;
+  min-height: 600px;
+  height: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
 .jukebox-image-stack {
@@ -1456,7 +1459,8 @@ a.projectLinkText {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
+  margin-top: 20px;
 }
 
 .jukebox-image-container {
@@ -1504,7 +1508,7 @@ a.projectLinkText {
   max-width: 600px;
   z-index: 15;
   position: relative;
-  margin-top: -5px;
+  margin-top: 20px;
 }
 
 .jukebox-project-title {
@@ -1579,11 +1583,45 @@ a.projectLinkText {
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
 }
 
+/* Fixed navigation button positioning */
+.jukebox-carousel-container {
+  position: relative;
+  min-height: 500px;
+  height: 500px;
+}
+
+.jukebox-nav-button {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 20 !important;
+  width: 50px !important;
+  height: 50px !important;
+  background-color: rgba(0, 255, 255, 0.1) !important;
+  border: 2px solid #00ffff !important;
+  color: #00ffff !important;
+  transition: all 0.3s ease !important;
+}
+
+.jukebox-nav-button:hover {
+  background-color: rgba(0, 255, 255, 0.2) !important;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5) !important;
+}
+
+.jukebox-nav-left {
+  left: 20px !important;
+}
+
+.jukebox-nav-right {
+  right: 20px !important;
+}
+
 /* Responsive Design for Jukebox */
 @media (max-width: 768px) {
   .jukebox-carousel-container {
     padding: 15px 10px;
-    min-height: 450px;
+    min-height: 550px;
+    height: 550px;
   }
 
   .jukebox-image-stack {
@@ -1642,5 +1680,20 @@ a.projectLinkText {
 
   .jukebox-project-description {
     font-size: 0.9rem;
+  }
+}
+
+/* Very tall screens - increase spacing between cards and text */
+@media (min-height: 1000px) {
+  .jukebox-carousel-container {
+    margin-top: 150px;
+  }
+
+  .jukebox-image-stack {
+    margin-bottom: 100px;
+  }
+
+  .jukebox-info-container {
+    margin-top: 80px;
   }
 }
