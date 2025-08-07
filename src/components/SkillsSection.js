@@ -29,7 +29,9 @@ const SkillsSection = React.memo(() => (
       <ScrollAnimation className="fade-in">
         <div className="box red">
           <h2 className="cardTitle">Frameworks</h2>
-          <p className="cardText">Bootstrap,Rails,React,HTML5</p>
+          <p className="cardText" style={{ textAlign: "center" }}>
+            Bootstrap,Rails,React,HTML5,Node.js,Foundation
+          </p>
           <img
             className="skillIcon"
             src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg"
@@ -50,12 +52,22 @@ const SkillsSection = React.memo(() => (
             src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg"
             alt=""
           />
+          <img
+            className="skillIcon"
+            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg"
+            alt=""
+          />
+          <img
+            className="skillIcon"
+            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/foundation/foundation-original.svg"
+            alt=""
+          />
         </div>
       </ScrollAnimation>
       <ScrollAnimation className="fade-in">
         <div className="box box-down blue">
           <h2 className="cardTitle">Database Management</h2>
-          <p className="cardText">PostgreSQL,SQLite</p>
+          <p className="cardText">PostgreSQL,SQLite,Contentful</p>
           <img
             className="skillIcon"
             src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg"
@@ -66,6 +78,7 @@ const SkillsSection = React.memo(() => (
             src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg"
             alt=""
           />
+          <img className="skillIcon" src="/images/Contentful_logo.svg" alt="" />
         </div>
       </ScrollAnimation>
     </div>
@@ -73,7 +86,9 @@ const SkillsSection = React.memo(() => (
       <div className="row2-container">
         <div className="box orange">
           <h2 className="cardTitle">Testing & Workflow</h2>
-          <p className="cardText">Git,Postman</p>
+          <p className="cardText">
+            Git,Postman,Heroku,Netlify,Railway,Google Analytics,Lighthouse,WCAG
+          </p>
           <img
             className="skillIcon"
             src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg"
@@ -82,6 +97,36 @@ const SkillsSection = React.memo(() => (
           <img
             className="skillIcon"
             src="https://imgs.search.brave.com/P8tgN3JjEO3M5UgZG_t4k8XKgJ8MKecubq1JiMRTuAU/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9jZG4u/ZnJlZWJpZXN1cHBs/eS5jb20vbG9nb3Mv/bGFyZ2UvMngvZ2l0/LWljb24tbG9nby1w/bmctdHJhbnNwYXJl/bnQucG5n"
+            alt=""
+          />
+          <img
+            className="skillIcon"
+            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/heroku/heroku-original-wordmark.svg"
+            alt=""
+          />
+          <img
+            className="skillIcon"
+            src="https://www.vectorlogo.zone/logos/netlify/netlify-icon.svg"
+            alt=""
+          />
+          <img
+            className="skillIcon"
+            src="https://railway.app/favicon.ico"
+            alt=""
+          />
+          <img
+            className="skillIcon"
+            src="https://www.vectorlogo.zone/logos/google_analytics/google_analytics-icon.svg"
+            alt=""
+          />
+          <img
+            className="skillIcon"
+            src="https://developers.google.com/static/web/images/lighthouse-logo.svg"
+            alt=""
+          />
+          <img
+            className="skillIcon"
+            src="https://www.w3.org/WAI/WCAG2AAA-Conformance.svg"
             alt=""
           />
         </div>
