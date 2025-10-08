@@ -57,7 +57,7 @@ const TextBox = React.memo(() => {
             <div className="row">
               <ScrollAnimation className="fade-in-left">
                 <a
-                  href="https://drive.google.com/file/d/1smgOzGR_0CeN1sRE9huGfoDObgwz7vlm/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1Cju2lOPz60TIiqLOd2Vjmg6x9tFdKQBy/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -76,7 +76,7 @@ const TextBox = React.memo(() => {
                 Hi, I'm Lance Hebert. The "Pandemic Pivot" took me from
                 practicing physical therapy to 3+ years as a full-time software
                 engineer on-staff at a fast-paced digital marketing agency. I
-                build accessible, high-performance Rails & React apps—raising
+                built accessible, high-performance Rails & React apps, raising
                 Lighthouse scores from the 40s into the 90s, shaving 40 points
                 off PageSpeed Insights, and mentoring junior devs on WCAG 2.1 AA
                 and headless-CMS best practices.
@@ -84,11 +84,15 @@ const TextBox = React.memo(() => {
               <br />
               <br />
               <ScrollAnimation className="fade-in-left">
-                My healthcare background sharpened my leadership, empathy, and
-                attention to detail—skills I apply daily to write clean code and
-                deliver meaningful user experiences. Off-hours you'll find me on
-                the ice playing hockey, experimenting with AI/Web3/AR projects,
-                or leveling up in PC games.
+                Now I'm transitioning into project management, leveraging my
+                technical background and healthcare experience to bridge the gap
+                between development teams and business objectives. My experience
+                in leadership, empathy, and attention to detail from both
+                healthcare and engineering roles positions me well to drive
+                cross-functional collaboration and deliver strategic value.
+                Off-hours you'll find me on the ice playing hockey,
+                experimenting with AI/Web3/AR projects, or leveling up in PC
+                games.
               </ScrollAnimation>
             </p>
 
