@@ -24,7 +24,7 @@ const SIMULATED_RESPONSES = {
   interests:
     "Lance is passionate about:\n\n- Web3/cryptocurrencies/blockchain technology\n- Health hacking and biohacking\n- Augmented reality and emerging tech\n- Creating innovative software solutions\n\nHe loves exploring cutting-edge technologies and applying them to real-world problems!",
   resume:
-    "You can view Lance's resume here:\nhttps://drive.google.com/file/d/1smgOzGR_0CeN1sRE9huGfoDObgwz7vlm/view?usp=sharing\n\nIt includes his full work experience, technical skills, and project details!",
+    "You can view Lance's resume here:\nhttps://drive.google.com/file/d/1ta1tvFi7rmJWRb66UlDODxXjv0r6T9ga/view?usp=drive_link\n\nIt includes his full work experience, technical skills, and project details!",
   default:
     "Hi! I'm Lance's AI assistant. I can help you learn about his professional background! You can ask me about:\n\n- Experience & Work History\n- Technical Skills & Technologies\n- Projects & Portfolio\n- Contact Information & Social Links\n- Education & Background\n- Interests & Passions\n- Resume & CV\n\nWhat would you like to know about Lance?",
 };

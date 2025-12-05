@@ -57,7 +57,7 @@ const TextBox = React.memo(() => {
             <div className="row">
               <ScrollAnimation className="fade-in-left">
                 <a
-                  href="https://drive.google.com/file/d/1Cju2lOPz60TIiqLOd2Vjmg6x9tFdKQBy/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1ta1tvFi7rmJWRb66UlDODxXjv0r6T9ga/view?usp=drive_link"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
